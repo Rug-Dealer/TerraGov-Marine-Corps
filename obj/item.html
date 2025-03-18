@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;item - byond</title>
+</head>
+<body>
+<header>
+    <a href="index.html">byond</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/item.html#proc">Proc Details</a></header>
+<main>
+<h1>item <aside>/<a href="obj/item.html">obj/item</a></aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/adjacent.dm#L142">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;adjacent.dm 142"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/item.html#proc/attack_alternate">attack_alternate</a></th><td>attack_alternate</td></tr>
+            <tr><th><a href="obj/item.html#proc/attack_self">attack_self</a></th><td>Called when the item is in the active hand, and clicked; alternately, there is an 'activate held object' verb or you can hit pagedown.</td></tr>
+            <tr><th><a href="obj/item.html#proc/attack_self_alternate">attack_self_alternate</a></th><td>Called when the item is in the active hand, and RIGHT clicked;</td></tr>
+            <tr><th><a href="obj/item.html#proc/melee_attack_chain_alternate">melee_attack_chain_alternate</a></th><td>RIGHT CLICK CODE FROM HERE</td></tr>
+            <tr><th><a href="obj/item.html#proc/slot_to_in_storage_slot">slot_to_in_storage_slot</a></th><td>Get appropriate SLOT_IN_X for given slot</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/attack_alternate"><aside class="declaration">proc </aside>attack_alternate<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/M, /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/user) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/item_attack.dm#L332">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 332"/></a></aside>
+        </h3>
+        <p>attack_alternate</p>
+<p>called when the a mob right click attacks on another mob with an item
+Arguments:
+M: the target being attacked
+user: the person clicking</p><h3 id="proc/attack_self"><aside class="declaration">proc </aside>attack_self<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/item_attack.dm#L45">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 45"/></a></aside>
+        </h3>
+        <p>Called when the item is in the active hand, and clicked; alternately, there is an 'activate held object' verb or you can hit pagedown.</p><h3 id="proc/attack_self_alternate"><aside class="declaration">proc </aside>attack_self_alternate<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/item_attack.dm#L53">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 53"/></a></aside>
+        </h3>
+        <p>Called when the item is in the active hand, and RIGHT clicked;</p><h3 id="proc/melee_attack_chain_alternate"><aside class="declaration">proc </aside>melee_attack_chain_alternate<aside>(/<a href="mob.html">mob</a>/user, /<a href="atom.html">atom</a>/target, params) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/item_attack.dm#L296">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 296"/></a></aside>
+        </h3>
+        <p>RIGHT CLICK CODE FROM HERE</p>
+<p>Most of this is basically whats above for left click but broken down, add more as needed
+A less complex version of melee_attack_chain, called when rightclicking with an item on something
+Arguments:
+user: mob attacking with this item
+target: atom being clicked on
+params: passed down params from Click()</p><h3 id="proc/slot_to_in_storage_slot"><aside class="declaration">proc </aside>slot_to_in_storage_slot<aside>(slot) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__DEFINES/equipment.dm#L686">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__DEFINES&#x2F;equipment.dm 686"/></a></aside>
+        </h3>
+        <p>Get appropriate SLOT_IN_X for given slot</p></main>
+<footer>
+    tgmc.dme
+    <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/tree/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c">8f4596e</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

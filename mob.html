@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;mob - byond</title>
+</head>
+<body>
+<header>
+    <a href="index.html">byond</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="mob.html#proc">Proc Details</a></header>
+<main>
+<h1>mob <aside>/<a href="mob.html">mob</a></aside><aside> inherits /<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a></aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L22">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 22"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="mob.html#proc/AltRightClickOn">AltRightClickOn</a></th><td>Called when a owner mob Alt + Rightmouseclicks an atom, given that Altclick does not return TRUE</td></tr>
+            <tr><th><a href="mob.html#proc/ClickOn">ClickOn</a></th><td>Standard mob ClickOn()
+Handles exceptions: Buildmode, middle click, modified clicks, mech actions</td></tr>
+            <tr><th><a href="mob.html#proc/RightClickOn">RightClickOn</a></th><td>Called when a owner mob Rightmouseclicks an atom</td></tr>
+            <tr><th><a href="mob.html#proc/ShiftRightClickOn">ShiftRightClickOn</a></th><td>Called when a owner mob Shift + Rightmouseclicks an atom</td></tr>
+            <tr><th><a href="mob.html#proc/UnarmedAttack">UnarmedAttack</a></th><td>Translates into attack_hand, etc.</td></tr>
+            <tr><th><a href="mob.html#proc/changeNext_move">changeNext_move</a></th><td>how many times we've fired the railgun this cycle
+max times we can fire within a single volley
+used to check if we have valid targets
+Delays the mob's next click/action by num deciseconds
+eg: 10 - 3 = 7 deciseconds of delay
+eg: 10 * 0.5 = 5 deciseconds of delay
+DOES NOT EFFECT THE BASE 1 DECISECOND DELAY OF NEXT_CLICK</td></tr>
+            <tr><th><a href="mob.html#proc/clear_fullscreen">clear_fullscreen</a></th><td>Removes a fullscreen overlay</td></tr>
+            <tr><th><a href="mob.html#proc/do_after_coefficent">do_after_coefficent</a></th><td>Multiplier on all do_afters for this mob</td></tr>
+            <tr><th><a href="mob.html#proc/finish_clear_fullscreen">finish_clear_fullscreen</a></th><td>Actually removes the fullscreen overlay when ready</td></tr>
+            <tr><th><a href="mob.html#proc/interaction_emote">interaction_emote</a></th><td>All in one function to begin interactions</td></tr>
+            <tr><th><a href="mob.html#proc/log_message">log_message</a></th><td>Logs a message in a mob's individual log, and in the global logs as well if log_globally is true</td></tr>
+            <tr><th><a href="mob.html#proc/log_mob_tag">log_mob_tag</a></th><td>Logs a mesage to the mob_tags log, including the mobs tag
+Arguments:</td></tr>
+            <tr><th><a href="mob.html#proc/overlay_fullscreen">overlay_fullscreen</a></th><td>Applies a fullscreen overlay</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/AltRightClickOn"><aside class="declaration">proc </aside>AltRightClickOn<aside>(/<a href="atom.html">atom</a>/A) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/click.dm#L382">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;click.dm 382"/></a></aside>
+        </h3>
+        <p>Called when a owner mob Alt + Rightmouseclicks an atom, given that Altclick does not return TRUE</p><h3 id="proc/ClickOn"><aside class="declaration">proc </aside>ClickOn<aside>(/<a href="atom.html">atom</a>/A, location, params) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/click.dm#L49">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;click.dm 49"/></a></aside>
+        </h3>
+        <p>Standard mob ClickOn()
+Handles exceptions: Buildmode, middle click, modified clicks, mech actions</p>
+<p>After that, mostly just check your state, check whether you're holding an item,
+check whether you're adjacent to the target, then pass off the click to whoever
+is receiving it.
+The most common are:</p>
+<ul>
+<li>mob/UnarmedAttack(atom, adjacent, params) - used here only when adjacent, with no item in hand; in the case of humans, checks gloves</li>
+<li>atom/attackby(item, user, params) - used only when adjacent</li>
+<li>item/afterattack(atom, user, adjacent, params) - used both ranged and adjacent when not handled by attackby</li>
+<li>mob/RangedAttack(atom, params) - used only ranged, only used for tk and laser eyes but could be changed</li>
+</ul><h3 id="proc/RightClickOn"><aside class="declaration">proc </aside>RightClickOn<aside>(/<a href="atom.html">atom</a>/A) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/click.dm#L356">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;click.dm 356"/></a></aside>
+        </h3>
+        <p>Called when a owner mob Rightmouseclicks an atom</p><h3 id="proc/ShiftRightClickOn"><aside class="declaration">proc </aside>ShiftRightClickOn<aside>(/<a href="atom.html">atom</a>/A) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/click.dm#L373">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;click.dm 373"/></a></aside>
+        </h3>
+        <p>Called when a owner mob Shift + Rightmouseclicks an atom</p><h3 id="proc/UnarmedAttack"><aside class="declaration">proc </aside>UnarmedAttack<aside>(/<a href="atom.html">atom</a>/A, has_proximity, params) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/click.dm#L268">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;click.dm 268"/></a></aside>
+        </h3>
+        <p>Translates into attack_hand, etc.</p>
+<p>has_proximity is TRUE if this afterattack was called on something adjacent, in your square, or on your person.</p>
+<p>has_proximity is not currently passed to attack_hand, and is instead used
+in human click code to allow glove touches only at melee range.</p>
+<p>params is passed on here as the third arg</p><h3 id="proc/changeNext_move"><aside class="declaration">proc </aside>changeNext_move<aside>(num) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/click.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;click.dm 7"/></a></aside>
+        </h3>
+        <p>how many times we've fired the railgun this cycle
+max times we can fire within a single volley
+used to check if we have valid targets
+Delays the mob's next click/action by num deciseconds
+eg: 10 - 3 = 7 deciseconds of delay
+eg: 10 * 0.5 = 5 deciseconds of delay
+DOES NOT EFFECT THE BASE 1 DECISECOND DELAY OF NEXT_CLICK</p><h3 id="proc/clear_fullscreen"><aside class="declaration">proc </aside>clear_fullscreen<aside>(category, animated) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/hud/fullscreen.dm#L36">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;hud&#x2F;fullscreen.dm 36"/></a></aside>
+        </h3>
+        <p>Removes a fullscreen overlay</p><h3 id="proc/do_after_coefficent"><aside class="declaration">proc </aside>do_after_coefficent<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/mobs.dm#L125">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;mobs.dm 125"/></a></aside>
+        </h3>
+        <p>Multiplier on all do_afters for this mob</p><h3 id="proc/finish_clear_fullscreen"><aside class="declaration">proc </aside>finish_clear_fullscreen<aside>(/<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/<a href="atom/movable/screen.html">screen</a>/<a href="atom/movable/screen/fullscreen.html">fullscreen</a>/screen, category) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/hud/fullscreen.dm#L49">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;hud&#x2F;fullscreen.dm 49"/></a></aside>
+        </h3>
+        <p>Actually removes the fullscreen overlay when ready</p><h3 id="proc/interaction_emote"><aside class="declaration">proc </aside>interaction_emote<aside>(/<a href="mob.html">mob</a>/target) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/hud/interactive_emotes.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;hud&#x2F;interactive_emotes.dm 2"/></a></aside>
+        </h3>
+        <p>All in one function to begin interactions</p><h3 id="proc/log_message"><aside class="parent"><a title="/atom" href="atom.html#proc/log_message">&uarr;</a></aside>log_message<aside>(message, message_type, color, log_globally) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/mob.dm#L11">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;mob.dm 11"/></a></aside>
+        </h3>
+        <p>Logs a message in a mob's individual log, and in the global logs as well if log_globally is true</p><h3 id="proc/log_mob_tag"><aside class="declaration">proc </aside>log_mob_tag<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/mob.dm#L6">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;mob.dm 6"/></a></aside>
+        </h3>
+        <p>Logs a mesage to the mob_tags log, including the mobs tag
+Arguments:</p>
+<ul>
+<li>text - text to log.</li>
+</ul><h3 id="proc/overlay_fullscreen"><aside class="declaration">proc </aside>overlay_fullscreen<aside>(category, type, severity) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/hud/fullscreen.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;hud&#x2F;fullscreen.dm 10"/></a></aside>
+        </h3>
+        <p>Applies a fullscreen overlay</p></main>
+<footer>
+    tgmc.dme
+    <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/tree/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c">8f4596e</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

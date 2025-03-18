@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>(global) - byond</title>
+</head>
+<body>
+<header>
+    <a href="index.html">byond</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="global.html#var">Var Details</a> - <a href="global.html#proc">Proc Details</a></header>
+<main>
+<h1>(global)
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/(unknown)">
+        <img src="git.png" width="16" height="16" title="(unknown)"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="global.html#var/Failsafe">Failsafe</a></th><td>Failsafe</td></tr>
+            <tr><th><a href="global.html#var/Master">Master</a></th><td>StonedMC</td></tr>
+            <tr><th><a href="global.html#var/SSambience">SSambience</a></th><td>The subsystem used to play ambience to users every now and then, makes them real excited.</td></tr>
+            <tr><th><a href="global.html#var/SSarea_contents">SSarea_contents</a></th><td>Responsible for managing the sizes of area.contained_turfs and area.turfs_to_uncontain
+These lists do not check for duplicates, which is fine, but it also means they can balloon in size over time
+as a consequence of repeated changes in area in a space
+They additionally may not always resolve often enough to avoid memory leaks
+This is annoying, so lets keep an eye on them and cut them down to size if needed</td></tr>
+            <tr><th><a href="global.html#var/SSasset_loading">SSasset_loading</a></th><td>Allows us to lazyload asset datums
+Anything inserted here will fully load if directly gotten
+So this just serves to remove the requirement to load assets fully during init</td></tr>
+            <tr><th><a href="global.html#var/SSaura">SSaura</a></th><td>Tracks aura emitters and tells them to pulse. Also used for creating new ones.</td></tr>
+            <tr><th><a href="global.html#var/SSautomatedfire">SSautomatedfire</a></th><td></td></tr>
+            <tr><th><a href="global.html#var/SSdiscord">SSdiscord</a></th><td></td></tr>
+            <tr><th><a href="global.html#var/SSearly_assets">SSearly_assets</a></th><td>Initializes any assets that need to be loaded ASAP, before the atoms SS initializes.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="global.html#proc/DirBlocked">DirBlocked</a></th><td>Checks if moving in a direction is blocked</td></tr>
+            <tr><th><a href="global.html#proc/LeftAndRightOfDir">LeftAndRightOfDir</a></th><td>Returns the left and right dir of the input dir, used for AI stutter step while attacking</td></tr>
+            <tr><th><a href="global.html#proc/LinkBlocked">LinkBlocked</a></th><td>Returns true if the path from A to B is blocked. Checks both paths where the direction is diagonal</td></tr>
+            <tr><th><a href="global.html#proc/TurfBlockedNonWindow">TurfBlockedNonWindow</a></th><td>Returns true if any object on a turf is both dense and not a window</td></tr>
+            <tr><th><a href="global.html#proc/___TraitAdd">___TraitAdd</a></th><td>DO NOT USE ___TraitAdd OR ___TraitRemove as a replacement for ADD_TRAIT / REMOVE_TRAIT defines. To be used explicitly for callback.</td></tr>
+            <tr><th><a href="global.html#proc/___TraitRemove">___TraitRemove</a></th><td>DO NOT USE ___TraitAdd OR ___TraitRemove as a replacement for ADD_TRAIT / REMOVE_TRAIT defines. To be used explicitly for callback.</td></tr>
+            <tr><th><a href="global.html#proc/__check_serialization_semver">__check_serialization_semver</a></th><td>Checks if the actual semver is equal or later than the wanted semver
+Must be passed as TEXT; you're probably looking for CHECK_SERIALIZATION_SEMVER, look right above</td></tr>
+            <tr><th><a href="global.html#proc/add_keybinding">add_keybinding</a></th><td>Adds an instanced keybinding to the global tracker</td></tr>
+            <tr><th><a href="global.html#proc/add_verb">add_verb</a></th><td>handles adding verbs and updating the stat panel browser</td></tr>
+            <tr><th><a href="global.html#proc/adminscrub">adminscrub</a></th><td>Runs STRIP_HTML_SIMPLE and byond's sanitization proc.</td></tr>
+            <tr><th><a href="global.html#proc/alone_in_area">alone_in_area</a></th><td>Checks if the mob provided (must_be_alone) is alone in an area</td></tr>
+            <tr><th><a href="global.html#proc/angle_to_cardinal_dir">angle_to_cardinal_dir</a></th><td>Returns one of the 4 cardinal directions based on an angle</td></tr>
+            <tr><th><a href="global.html#proc/angle_to_dir">angle_to_dir</a></th><td>Returns one of the 8 directions based on an angle</td></tr>
+            <tr><th><a href="global.html#proc/assemble_alert">assemble_alert</a></th><td>Design a faction alert. Returns a string.</td></tr>
+            <tr><th><a href="global.html#proc/assertion_message">assertion_message</a></th><td>Used by ASSERT to add a more detailed context to CRASH messages</td></tr>
+            <tr><th><a href="global.html#proc/assign_random_name">assign_random_name</a></th><td>Generate a name devices</td></tr>
+            <tr><th><a href="global.html#proc/assoc_to_keys">assoc_to_keys</a></th><td>Turns an associative list into a flat list of keys</td></tr>
+            <tr><th><a href="global.html#proc/auxtools_expr_stub">auxtools_expr_stub</a></th><td>auxtools expression evaluation</td></tr>
+            <tr><th><a href="global.html#proc/bitfield_to_list">bitfield_to_list</a></th><td>Converts a bitfield to a list of numbers (or words if a wordlist is provided)</td></tr>
+            <tr><th><a href="global.html#proc/blend_cutoff_colors">blend_cutoff_colors</a></th><td>Used to blend together two different color cutoffs
+Uses the screen blendmode under the hood, essentially just <a href="global.html#proc/blend_screen_color" title="/global">/proc/blend_screen_color</a>
+But paired down and modified to work for our color range
+Accepts the color cutoffs as two 3 length list(0-100,...) arguments</td></tr>
+            <tr><th><a href="global.html#proc/blend_screen_color">blend_screen_color</a></th><td>Blends together two colors (passed as 3 or 4 length lists) using the screen blend mode
+Much like multiply, screen effects the brightness of the resulting color
+Screen blend will always lighten the resulting color, since before multiplication we invert the colors
+This makes our resulting output brighter instead of darker</td></tr>
+            <tr><th><a href="global.html#proc/can_see_through">can_see_through</a></th><td>Returns if a turf can be seen from another turf.</td></tr>
+            <tr><th><a href="global.html#proc/center_image">center_image</a></th><td>Center's an image.
+Requires:
+The Image
+The x dimension of the icon file used in the image
+The y dimension of the icon file used in the image
+eg: center_image(image_to_center, 32,32)
+eg2: center_image(image_to_center, 96,96)</td></tr>
+            <tr><th><a href="global.html#proc/cheap_get_atom">cheap_get_atom</a></th><td>This proc attempts to get an instance of an atom type within distance, with center as the center.
+Arguments</td></tr>
+            <tr><th><a href="global.html#proc/cheap_get_humans_near">cheap_get_humans_near</a></th><td>Returns a list of humans via get_dist and same z level method, very cheap compared to range()</td></tr>
+            <tr><th><a href="global.html#proc/cheap_get_living_near">cheap_get_living_near</a></th><td>Returns a list of mobs/living via get_dist and same z level method, very cheap compared to range()</td></tr>
+            <tr><th><a href="global.html#proc/cheap_get_mechs_near">cheap_get_mechs_near</a></th><td>Returns a list of mechs via get_dist and same z level method, very cheap compared to range()</td></tr>
+            <tr><th><a href="global.html#proc/cheap_get_tanks_near">cheap_get_tanks_near</a></th><td>Returns a list of vehicles via get_dist and same z level method, very cheap compared to range()</td></tr>
+            <tr><th><a href="global.html#proc/cheap_get_xenos_near">cheap_get_xenos_near</a></th><td>Returns a list of xenos via get_dist and same z level method, very cheap compared to range()</td></tr>
+            <tr><th><a href="global.html#proc/check_path">check_path</a></th><td>Draws a line between two atoms, then checks if the path is blocked
+Returns the last turf in the list it can successfully path to</td></tr>
+            <tr><th><a href="global.html#proc/check_topdown_validity">check_topdown_validity</a></th><td>Checks if a passed in MA or atom is allowed to have its current plane/layer matchup</td></tr>
+            <tr><th><a href="global.html#proc/circle_range">circle_range</a></th><td>Returns all atoms present in a circle around the center</td></tr>
+            <tr><th><a href="global.html#proc/circle_range_turfs">circle_range_turfs</a></th><td>Returns a list of turfs around a center based on RANGE_TURFS()</td></tr>
+            <tr><th><a href="global.html#proc/circle_view">circle_view</a></th><td>Returns all atoms present in a circle around the center but uses view() instead of range() (Currently not used)</td></tr>
+            <tr><th><a href="global.html#proc/circle_view_turfs">circle_view_turfs</a></th><td>Returns a list of turfs around a center based on view()</td></tr>
+            <tr><th><a href="global.html#proc/closest_cardinal_dir">closest_cardinal_dir</a></th><td>If given a diagonal dir, return a corresponding cardinal dir. East/west preferred</td></tr>
+            <tr><th><a href="global.html#proc/cmp_crafting_req_priority">cmp_crafting_req_priority</a></th><td>Sorts crafting recipe requirements before the crafting recipe is inserted into GLOB.crafting_recipes</td></tr>
+            <tr><th><a href="global.html#proc/color_hex2color_matrix">color_hex2color_matrix</a></th><td>Takes a hex color provided as string and returns the proper color matrix using hex2num.</td></tr>
+            <tr><th><a href="global.html#proc/color_matrix2color_hex">color_matrix2color_hex</a></th><td>will drop all values not on the diagonal
+returns a hex color</td></tr>
+            <tr><th><a href="global.html#proc/compare_list">compare_list</a></th><td>flat list comparison, checks if two lists have the same contents</td></tr>
+            <tr><th><a href="global.html#proc/create_ooc_announcement_div">create_ooc_announcement_div</a></th><td>Inserts a span styled message into an OOC alert style div</td></tr>
+            <tr><th><a href="global.html#proc/cut_relative_direction">cut_relative_direction</a></th><td>Takes a screen_loc string and cut out any directions like NORTH or SOUTH</td></tr>
+            <tr><th><a href="global.html#proc/deadchat_broadcast">deadchat_broadcast</a></th><td>Displays a message in deadchat, sent by source. Source is not linkified, message is, to avoid stuff like character names to be linkified.
+Automatically gives the class deadsay to the whole message (message + source)</td></tr>
+            <tr><th><a href="global.html#proc/delete_all_SS_and_recreate_master">delete_all_SS_and_recreate_master</a></th><td>Delete all existing SS to basically start over</td></tr>
+            <tr><th><a href="global.html#proc/do_after">do_after</a></th><td>A delayed action with adjustable checks</td></tr>
+            <tr><th><a href="global.html#proc/dview">dview</a></th><td>Version of view() which ignores darkness, because BYOND doesn't have it (I actually suggested it but it was tagged redundant, BUT HEARERS IS A T- /rant).</td></tr>
+            <tr><th><a href="global.html#proc/emissive_appearance">emissive_appearance</a></th><td>Produces a mutable appearance glued to the [EMISSIVE_PLANE] dyed to be the <a href="code/__DEFINES/lighting.html#define/EMISSIVE_COLOR" title="EMISSIVE_COLOR">EMISSIVE_COLOR</a>.</td></tr>
+            <tr><th><a href="global.html#proc/emissive_blocker">emissive_blocker</a></th><td>Produces a mutable appearance glued to the [EMISSIVE_PLANE] dyed to be the <a href="code/__DEFINES/lighting.html#define/EM_BLOCK_COLOR" title="EM_BLOCK_COLOR">EM_BLOCK_COLOR</a>.</td></tr>
+            <tr><th><a href="global.html#proc/filter_fancy_list">filter_fancy_list</a></th><td>Takes a given fancy list and filters out a given filter text.
+Args:
+fancy_list - The list provided we filter.
+filter - the text we use to filter fancy_list</td></tr>
+            <tr><th><a href="global.html#proc/flick_overlay_view">flick_overlay_view</a></th><td>wrapper for flick_overlay(), flicks to everyone who can see the target atom</td></tr>
+            <tr><th><a href="global.html#proc/generate_and_hash_rsc_file">generate_and_hash_rsc_file</a></th><td>generates a filename for a given asset.
+like generate_asset_name(), except returns the rsc reference and the rsc file hash as well as the asset name (sans extension)
+used so that certain asset files dont have to be hashed twice</td></tr>
+            <tr><th><a href="global.html#proc/generate_asset_name">generate_asset_name</a></th><td>Generate a filename for this asset
+The same asset will always lead to the same asset name
+(Generated names do not include file extention.)</td></tr>
+            <tr><th><a href="global.html#proc/generate_cone">generate_cone</a></th><td>Generates a cone shape. Any other checks should be handled with the resulting list. Can work with up to 359 degrees
+Variables:
+center - where the cone begins, or center of a circle drawn with this
+max_row_count - how many rows are checked
+starting_row - from how far should the turfs start getting included in the cone. -1 required to include center turf due to byond
+cone_width - big the angle of the cone is
+cone_direction - at what angle should the cone be made, relative to the game board's orientation
+blocked - whether the cone should take into consideration obstacles</td></tr>
+            <tr><th><a href="global.html#proc/generate_lazy_template_map">generate_lazy_template_map</a></th><td>Iterates through all lazy template datums that exist and returns a list of them as an associative list of key -&gt; instance.</td></tr>
+            <tr><th><a href="global.html#proc/get_adjacent_areas">get_adjacent_areas</a></th><td>Returns a list of all areas that are adjacent to the center atom's area, clear the list of nulls at the end.</td></tr>
+            <tr><th><a href="global.html#proc/get_adjacent_open_areas">get_adjacent_open_areas</a></th><td>Returns a list with all the adjacent areas by getting the adjacent open turfs</td></tr>
+            <tr><th><a href="global.html#proc/get_adjacent_open_turfs">get_adjacent_open_turfs</a></th><td>Returns a list with all the adjacent open turfs. Clears the list of nulls in the end.</td></tr>
+            <tr><th><a href="global.html#proc/get_areas">get_areas</a></th><td>Takes: Area type as text string or as typepath OR an instance of the area. Returns: A list of all areas of that type in the world.</td></tr>
+            <tr><th><a href="global.html#proc/get_areas_in_range">get_areas_in_range</a></th><td>Returns a list with the names of the areas around a center at a certain distance
+Returns the local area if no distance is indicated
+Returns an empty list if the center is null</td></tr>
+            <tr><th><a href="global.html#proc/get_atom_on_turf">get_atom_on_turf</a></th><td>Returns the top-most atom sitting on the turf.
+For example, using this on a disk, which is in a bag, on a mob,
+will return the mob because it's on the turf.</td></tr>
+            <tr><th><a href="global.html#proc/get_bbox_of_atoms">get_bbox_of_atoms</a></th><td>Get a bounding box of a list of atoms.</td></tr>
+            <tr><th><a href="global.html#proc/get_between_angles">get_between_angles</a></th><td>returns degrees between two angles</td></tr>
+            <tr><th><a href="global.html#proc/get_closest_atom">get_closest_atom</a></th><td>Returns the closest atom of a specific type in a list from a source</td></tr>
+            <tr><th><a href="global.html#proc/get_dist_euclidian">get_dist_euclidian</a></th><td>Returns the distance between two atoms</td></tr>
+            <tr><th><a href="global.html#proc/get_dist_manhattan">get_dist_manhattan</a></th><td>Returns the manhattan distance between two atoms. Returns INFINITY if either are not on a turf, for BYOND get_dist() parity.</td></tr>
+            <tr><th><a href="global.html#proc/get_fancy_list_of_atom_types">get_fancy_list_of_atom_types</a></th><td>Generates a static list of 'fancy' atom types, or returns that if its already been generated.</td></tr>
+            <tr><th><a href="global.html#proc/get_fancy_list_of_datum_types">get_fancy_list_of_datum_types</a></th><td>Generates a static list of 'fancy' datum types, excluding everything atom, or returns that if its already been generated.</td></tr>
+            <tr><th><a href="global.html#proc/get_forward_square">get_forward_square</a></th><td>Returns a rectangle of turfs in front of the center.</td></tr>
+            <tr><th><a href="global.html#proc/get_hear">get_hear</a></th><td>Like view but bypasses luminosity check</td></tr>
+            <tr><th><a href="global.html#proc/get_hearers_in_LOS">get_hearers_in_LOS</a></th><td>Returns a list of movable atoms that are hearing sensitive in view_radius and line of sight to source
+the majority of the work is passed off to the spatial grid if view_radius &gt; 0
+because view() isnt a raycasting algorithm, this does not hold symmetry to it. something in view might not be hearable with this.
+if you want that use get_hearers_in_view() - however thats significantly more expensive</td></tr>
+            <tr><th><a href="global.html#proc/get_hearers_in_view">get_hearers_in_view</a></th><td>returns every hearaing movable in view to the turf of source not taking into account lighting
+useful when you need to maintain always being able to hear something if a sound is emitted from it and you can see it (and youre in range).
+otherwise this is just a more expensive version of get_hearers_in_LOS()</td></tr>
+            <tr><th><a href="global.html#proc/get_icon_dmi_path">get_icon_dmi_path</a></th><td>given an icon object, dmi file path, or atom/image/mutable_appearance, attempts to find and return an associated dmi file path.
+a weird quirk about dm is that /icon objects represent both compile-time or dynamic icons in the rsc,
+but stringifying rsc references returns a dmi file path
+ONLY if that icon represents a completely unchanged dmi file from when the game was compiled.
+so if the given object is associated with an icon that was in the rsc when the game was compiled, this returns a path. otherwise it returns &quot;&quot;</td></tr>
+            <tr><th><a href="global.html#proc/get_line">get_line</a></th><td>Get a list of turfs in a line from <code>starting_atom</code> to <code>ending_atom</code>.</td></tr>
+            <tr><th><a href="global.html#proc/get_mech_limb">get_mech_limb</a></th><td>helper that converts greyscale mech slots and types into typepaths</td></tr>
+            <tr><th><a href="global.html#proc/get_nearest_target">get_nearest_target</a></th><td>Returns the nearest target that has the right target flag</td></tr>
+            <tr><th><a href="global.html#proc/get_nested_locs">get_nested_locs</a></th><td>Returns a list of all locations (except the area) the movable is within.</td></tr>
+            <tr><th><a href="global.html#proc/get_open_turf_in_dir">get_open_turf_in_dir</a></th><td>Returns the open turf next to the center in a specific direction</td></tr>
+            <tr><th><a href="global.html#proc/get_path">get_path</a></th><td>Returns the most optimal path to get from starting atom to goal atom</td></tr>
+            <tr><th><a href="global.html#proc/get_sorted_areas">get_sorted_areas</a></th><td>Returns a sorted version of GLOB.areas, by name</td></tr>
+            <tr><th><a href="global.html#proc/get_traversal_line">get_traversal_line</a></th><td>Get a list of turfs in a line from <code>starting_atom</code> to <code>ending_atom</code>.
+Unlike get_line, this only takes cardinal steps, useful for checking movement or LOS
+Uses the ultra-fast <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham Line-Drawing Algorithm</a>.</td></tr>
+            <tr><th><a href="global.html#proc/get_valid_screen_location">get_valid_screen_location</a></th><td>Returns a valid location to place a screen object without overflowing the viewport</td></tr>
+            <tr><th><a href="global.html#proc/get_view_center">get_view_center</a></th><td>Return the center turf of the user's view</td></tr>
+            <tr><th><a href="global.html#proc/getpois">getpois</a></th><td>Returns a list of all items of interest with their name</td></tr>
+            <tr><th><a href="global.html#proc/icon2base64">icon2base64</a></th><td>Converts an icon to base64. Operates by putting the icon in the iconCache savefile,
+exporting it as text, and then parsing the base64 from that.
+(This relies on byond automatically storing icons in savefiles as base64)</td></tr>
+            <tr><th><a href="global.html#proc/icon2html">icon2html</a></th><td>the dmi file path we attempt to return if the given object argument is associated with a stringifiable icon
+if successful, this looks like &quot;icons/path/to/dmi_file.dmi&quot;
+but they pass both isicon() and isfile() checks. theyre the easiest case since stringifying them gives us the path we want
+generate an asset for the given icon or the icon of the given appearance for [thing], and send it to any clients in target.
+Arguments:</td></tr>
+            <tr><th><a href="global.html#proc/icon_exists">icon_exists</a></th><td>Checks whether a given icon state exists in a given icon file. If <code>file</code> and <code>state</code> both exist,
+this will return <code>TRUE</code> - otherwise, it will return <code>FALSE</code>.</td></tr>
+            <tr><th><a href="global.html#proc/icon_exists_or_scream">icon_exists_or_scream</a></th><td>Functions the same as <code>/proc/icon_exists()</code>, but with the addition of a stack trace if the
+specified file or state doesn't exist.</td></tr>
+            <tr><th><a href="global.html#proc/inLineOfSight">inLineOfSight</a></th><td>Calculate if two atoms are in sight, returns TRUE or FALSE</td></tr>
+            <tr><th><a href="global.html#proc/in_view_range">in_view_range</a></th><td>Returns TRUE if the atom is in the user view range.</td></tr>
+            <tr><th><a href="global.html#proc/init_campaign_asset_icons">init_campaign_asset_icons</a></th><td>Populates campaign_asset_icons</td></tr>
+            <tr><th><a href="global.html#proc/init_campaign_loadout_item_icons">init_campaign_loadout_item_icons</a></th><td>Populates campaign_loadout_item_icons</td></tr>
+            <tr><th><a href="global.html#proc/init_campaign_mission_icons">init_campaign_mission_icons</a></th><td>Populates campaign_mission_icons</td></tr>
+            <tr><th><a href="global.html#proc/init_campaign_perk_icons">init_campaign_perk_icons</a></th><td>Populates campaign_perk_icons</td></tr>
+            <tr><th><a href="global.html#proc/init_crafting_recipes">init_crafting_recipes</a></th><td>Inits crafting recipe lists</td></tr>
+            <tr><th><a href="global.html#proc/init_crafting_recipes_atoms">init_crafting_recipes_atoms</a></th><td>Inits atoms used in crafting recipes</td></tr>
+            <tr><th><a href="global.html#proc/init_emote_keybinds">init_emote_keybinds</a></th><td>Create a keybind for each datum/emote</td></tr>
+            <tr><th><a href="global.html#proc/init_ethnicities">init_ethnicities</a></th><td>Ethnicity - Initialise all /datum/ethnicity into a list indexed by ethnicity name</td></tr>
+            <tr><th><a href="global.html#proc/init_keybindings">init_keybindings</a></th><td>Creates and sorts all the keybinding datums</td></tr>
+            <tr><th><a href="global.html#proc/init_minimap_icons">init_minimap_icons</a></th><td>Populates minimap_icons</td></tr>
+            <tr><th><a href="global.html#proc/init_sprite_accessories">init_sprite_accessories</a></th><td>Initial Building</td></tr>
+            <tr><th><a href="global.html#proc/is_ic_filtered">is_ic_filtered</a></th><td>Given a text, will return what word is on the IC filter, with the reason.
+Returns null if the message is OK.</td></tr>
+            <tr><th><a href="global.html#proc/is_ic_filtered_for_bombvests">is_ic_filtered_for_bombvests</a></th><td>Given a text, will return what word is on the IC filter, or bomb vest filter, with the reason.
+Returns null if the message is OK.</td></tr>
+            <tr><th><a href="global.html#proc/is_ooc_filtered">is_ooc_filtered</a></th><td>Given a text, will return what word is on the OOC filter, with the reason.
+Returns null if the message is OK.</td></tr>
+            <tr><th><a href="global.html#proc/is_soft_ic_filtered">is_soft_ic_filtered</a></th><td>Given a text, will return what word is on the soft IC filter, with the reason.
+Returns null if the message is OK.</td></tr>
+            <tr><th><a href="global.html#proc/is_soft_ic_filtered_for_bombvests">is_soft_ic_filtered_for_bombvests</a></th><td>Given a text, will return what word is on the soft IC filter, ignoring words allowed on the PDA, with the reason.
+Returns null if the message is OK.</td></tr>
+            <tr><th><a href="global.html#proc/is_soft_ooc_filtered">is_soft_ooc_filtered</a></th><td>Given a text, will return that word is on the soft OOC filter, with the reason.
+Returns null if the message is OK.</td></tr>
+            <tr><th><a href="global.html#proc/is_valid_dmi_file">is_valid_dmi_file</a></th><td>given a text string, returns whether it is a valid dmi icons folder path</td></tr>
+            <tr><th><a href="global.html#proc/is_valid_for_resin_structure">is_valid_for_resin_structure</a></th><td>Checks all conditions if a spot is valid for construction , will return TRUE</td></tr>
+            <tr><th><a href="global.html#proc/is_valid_src">is_valid_src</a></th><td>Check if a datum has not been deleted and is a valid source</td></tr>
+            <tr><th><a href="global.html#proc/jatum_deserialize">jatum_deserialize</a></th><td>Attempt to create a value from a JATUN JSON.</td></tr>
+            <tr><th><a href="global.html#proc/jatum_serialize">jatum_serialize</a></th><td>Attempt to serialize a given value to the JATUM format.</td></tr>
+            <tr><th><a href="global.html#proc/line_of_sight">line_of_sight</a></th><td>Checks if ending atom is viewable by starting atom, uses bresenham line algorithm but checks some extra tiles on a diagonal next tile</td></tr>
+            <tr><th><a href="global.html#proc/list_clear_nulls">list_clear_nulls</a></th><td>Removes any null entries from the list
+Returns TRUE if the list had nulls, FALSE otherwise</td></tr>
+            <tr><th><a href="global.html#proc/log_access">log_access</a></th><td>Logging for logging in &amp; out of the game, with error messages.</td></tr>
+            <tr><th><a href="global.html#proc/log_admin">log_admin</a></th><td>General logging for admin actions</td></tr>
+            <tr><th><a href="global.html#proc/log_admin_private">log_admin_private</a></th><td>General logging for admin actions</td></tr>
+            <tr><th><a href="global.html#proc/log_adminsay">log_adminsay</a></th><td>Logging for AdminSay (ASAY) messages</td></tr>
+            <tr><th><a href="global.html#proc/log_asset">log_asset</a></th><td>Logging for loading and caching assets</td></tr>
+            <tr><th><a href="global.html#proc/log_attack">log_attack</a></th><td>Generic attack logging</td></tr>
+            <tr><th><a href="global.html#proc/log_bomber">log_bomber</a></th><td>Logging for bombs detonating</td></tr>
+            <tr><th><a href="global.html#proc/log_combat">log_combat</a></th><td>Log a combat message in the attack log</td></tr>
+            <tr><th><a href="global.html#proc/log_config">log_config</a></th><td>Logging for config errors
+Rarely gets called; just here in case the config breaks.</td></tr>
+            <tr><th><a href="global.html#proc/log_directed_talk">log_directed_talk</a></th><td>Helper for logging of messages with only one sender and receiver (i.e. mind links)</td></tr>
+            <tr><th><a href="global.html#proc/log_dsay">log_dsay</a></th><td>Logging for DeadchatSay (DSAY) messages</td></tr>
+            <tr><th><a href="global.html#proc/log_emote">log_emote</a></th><td>Logging for emotes</td></tr>
+            <tr><th><a href="global.html#proc/log_ffattack">log_ffattack</a></th><td>Generic attack logging for friendly fire</td></tr>
+            <tr><th><a href="global.html#proc/log_filter">log_filter</a></th><td>Logs to the filter log with the given message, match, and scope</td></tr>
+            <tr><th><a href="global.html#proc/log_game">log_game</a></th><td>Logging for generic/unsorted game messages</td></tr>
+            <tr><th><a href="global.html#proc/log_hivemind">log_hivemind</a></th><td>Logging for hivemind messages</td></tr>
+            <tr><th><a href="global.html#proc/log_job_debug">log_job_debug</a></th><td>Logging for job slot changes</td></tr>
+            <tr><th><a href="global.html#proc/log_looc">log_looc</a></th><td>Logging for messages sent in LOOC</td></tr>
+            <tr><th><a href="global.html#proc/log_manifest">log_manifest</a></th><td>Logging for player manifest (ckey, name, job, special role, roundstart/latejoin)</td></tr>
+            <tr><th><a href="global.html#proc/log_mapping">log_mapping</a></th><td>Logging for mapping errors</td></tr>
+            <tr><th><a href="global.html#proc/log_mecha">log_mecha</a></th><td>Logging for mech actions</td></tr>
+            <tr><th><a href="global.html#proc/log_mentorsay">log_mentorsay</a></th><td>Logging for MentorSay (MSAY) messages</td></tr>
+            <tr><th><a href="global.html#proc/log_minimap_drawing">log_minimap_drawing</a></th><td>Logging for drawing on minimap</td></tr>
+            <tr><th><a href="global.html#proc/log_mooc">log_mooc</a></th><td>Logging for messages sent in MOOC</td></tr>
+            <tr><th><a href="global.html#proc/log_ooc">log_ooc</a></th><td>Logging for messages sent in OOC</td></tr>
+            <tr><th><a href="global.html#proc/log_paper">log_paper</a></th><td>Logging for writing made on paper</td></tr>
+            <tr><th><a href="global.html#proc/log_prayer">log_prayer</a></th><td>Logging for prayed messages</td></tr>
+            <tr><th><a href="global.html#proc/log_qdel">log_qdel</a></th><td>Logging for hard deletes</td></tr>
+            <tr><th><a href="global.html#proc/log_say">log_say</a></th><td>Logging for generic spoken messages</td></tr>
+            <tr><th><a href="global.html#proc/log_speech_indicators">log_speech_indicators</a></th><td>Logging for speech indicators.</td></tr>
+            <tr><th><a href="global.html#proc/log_sql">log_sql</a></th><td>Logging for DB errors</td></tr>
+            <tr><th><a href="global.html#proc/log_telecomms">log_telecomms</a></th><td>Logging for speech taking place over comms, as well as tcomms equipment</td></tr>
+            <tr><th><a href="global.html#proc/log_tgui">log_tgui</a></th><td>Appends a tgui-related log entry. All arguments are optional.</td></tr>
+            <tr><th><a href="global.html#proc/log_tool">log_tool</a></th><td>Logging for tool usage</td></tr>
+            <tr><th><a href="global.html#proc/log_topic">log_topic</a></th><td>Logging for world/Topic</td></tr>
+            <tr><th><a href="global.html#proc/log_transport">log_transport</a></th><td>Logging for transport (tram/elevator) actions</td></tr>
+            <tr><th><a href="global.html#proc/log_vote">log_vote</a></th><td>Logging for OOC votes</td></tr>
+            <tr><th><a href="global.html#proc/log_whisper">log_whisper</a></th><td>Logging for whispered messages</td></tr>
+            <tr><th><a href="global.html#proc/log_world">log_world</a></th><td>Log to both DD and the logfile.</td></tr>
+            <tr><th><a href="global.html#proc/log_xooc">log_xooc</a></th><td>Logging for messages sent in XOOC</td></tr>
+            <tr><th><a href="global.html#proc/make_datum_reference_lists">make_datum_reference_lists</a></th><td>These should be replaced with proper _INIT macros</td></tr>
+            <tr><th><a href="global.html#proc/make_types_fancy">make_types_fancy</a></th><td>Turns a list of typepaths into 'fancy' titles for admins.</td></tr>
+            <tr><th><a href="global.html#proc/md5asfile">md5asfile</a></th><td>Save file as an external file then md5 it.
+Used because md5ing files stored in the rsc sometimes gives incorrect md5 results.</td></tr>
+            <tr><th><a href="global.html#proc/md5filepath">md5filepath</a></th><td>Returns the md5 of a file at a given path.</td></tr>
+            <tr><th><a href="global.html#proc/minor_announce">minor_announce</a></th><td>Make a minor announcement to a target</td></tr>
+            <tr><th><a href="global.html#proc/offset_to_screen_loc">offset_to_screen_loc</a></th><td>Takes a list in the form (x_offset, y_offset)
+And converts it to a screen loc string
+Accepts an optional view string/size to force the screen_loc around, so it can't go out of scope</td></tr>
+            <tr><th><a href="global.html#proc/params2screenpixel">params2screenpixel</a></th><td>Converts a screen loc param to a x,y coordinate pixel on the screen</td></tr>
+            <tr><th><a href="global.html#proc/partially_block_emissives">partially_block_emissives</a></th><td>Takes a non area atom and a threshold
+Makes it block emissive with any pixels with more alpha then that threshold, with the rest allowing the light to pass
+Returns a list of objects, automatically added to your vis_contents, that apply this effect
+QDEL them when appropriate</td></tr>
+            <tr><th><a href="global.html#proc/peek">peek</a></th><td>Returns the top (last) element from the list, does not remove it from the list. Stack functionality.</td></tr>
+            <tr><th><a href="global.html#proc/pick_weight_recursive">pick_weight_recursive</a></th><td>Like pickweight, but allowing for nested lists.</td></tr>
+            <tr><th><a href="global.html#proc/pickweight">pickweight</a></th><td>Picks a random element from a list based on a weighting system.
+For example, given the following list:
+A = 6, B = 3, C = 1, D = 0
+A would have a 60% chance of being picked,
+B would have a 30% chance of being picked,
+C would have a 10% chance of being picked,
+and D would have a 0% chance of being picked.
+You should only pass integers in.</td></tr>
+            <tr><th><a href="global.html#proc/print_command_report">print_command_report</a></th><td>Spawns a paper at each communications printer</td></tr>
+            <tr><th><a href="global.html#proc/priority_announce">priority_announce</a></th><td>Make a priority announcement to a target</td></tr>
+            <tr><th><a href="global.html#proc/random_tts_voice">random_tts_voice</a></th><td>returns a random tts voice based on gender. Assumes theres 30 voices, not actually how many there are but yolo. todo should return based on gender but we need voice tags for that</td></tr>
+            <tr><th><a href="global.html#proc/recover_all_SS_and_recreate_master">recover_all_SS_and_recreate_master</a></th><td>Recreate all SSs which will still cause data survive due to Recover(), the new Master will then find and take them from global.vars</td></tr>
+            <tr><th><a href="global.html#proc/reject_bad_text">reject_bad_text</a></th><td>Returns the text if properly formatted, or null else.</td></tr>
+            <tr><th><a href="global.html#proc/remove_image_from_client">remove_image_from_client</a></th><td>Removes an image from a client's <code>.images</code>. Useful as a callback.</td></tr>
+            <tr><th><a href="global.html#proc/remove_images_from_clients">remove_images_from_clients</a></th><td>Removes an image from a list of client's images</td></tr>
+            <tr><th><a href="global.html#proc/remove_verb">remove_verb</a></th><td>handles removing verb and sending it to browser to update, use this for removing verbs</td></tr>
+            <tr><th><a href="global.html#proc/return_generator_args">return_generator_args</a></th><td>returns the arguments given to a generator and manually extracts them from the internal byond object
+returns:</td></tr>
+            <tr><th><a href="global.html#proc/return_typenames">return_typenames</a></th><td>Splits the type with parenthesis between each word so admins visually tell it is a typepath.</td></tr>
+            <tr><th><a href="global.html#proc/rustg_get_version">rustg_get_version</a></th><td>Gets the version of rust_g</td></tr>
+            <tr><th><a href="global.html#proc/rustg_git_commit_date">rustg_git_commit_date</a></th><td>Returns the date of the given revision using the provided format.
+Defaults to returning %F which is YYYY-MM-DD.</td></tr>
+            <tr><th><a href="global.html#proc/rustg_git_commit_date_head">rustg_git_commit_date_head</a></th><td>Returns the formatted datetime string of HEAD using the provided format.
+Defaults to returning %F which is YYYY-MM-DD.
+This is different to rustg_git_commit_date because it only needs the logs directory.</td></tr>
+            <tr><th><a href="global.html#proc/rustg_sound_length">rustg_sound_length</a></th><td>Provided a static RSC file path or a raw text file path, returns the duration of the file in deciseconds as a float.</td></tr>
+            <tr><th><a href="global.html#proc/rustg_unix_timestamp">rustg_unix_timestamp</a></th><td>Returns the timestamp as a string</td></tr>
+            <tr><th><a href="global.html#proc/sanitize">sanitize</a></th><td>Runs byond's html encoding sanitization proc, after replacing new-lines and tabs for the # character.</td></tr>
+            <tr><th><a href="global.html#proc/sanitize_inlist_tts">sanitize_inlist_tts</a></th><td>a wrapper with snowflake handling for tts</td></tr>
+            <tr><th><a href="global.html#proc/sanitize_is_full_emote_list">sanitize_is_full_emote_list</a></th><td>Sanitize the custom emote list</td></tr>
+            <tr><th><a href="global.html#proc/sanitize_islist">sanitize_islist</a></th><td>Makes sure value is a list
+Args:
+value - The list we're ensuring is actually a list
+default - The set default that will be given as fallback.
+required_amount - The required length of value for it to be valid, otherwise will continue to check for a fallback default.
+check_valid - If we should check if the values are all in the list of possible inputs
+possible_input_list - The list of possible valid inputs this list can hold, only gets checked if check_valid is TRUE</td></tr>
+            <tr><th><a href="global.html#proc/screen_loc_to_offset">screen_loc_to_offset</a></th><td>Takes a screen loc string in the format
+&quot;+-left-offset:+-pixel,+-bottom-offset:+-pixel&quot;
+Where the :pixel is optional, and returns
+A list in the format (x_offset, y_offset)
+We require context to get info out of screen locs that contain relative info, so NORTH, SOUTH, etc</td></tr>
+            <tr><th><a href="global.html#proc/semver_to_list">semver_to_list</a></th><td>Converts a semver string into a list of numbers</td></tr>
+            <tr><th><a href="global.html#proc/send2adminchat">send2adminchat</a></th><td>Sends a message to TGS admin chat channels.</td></tr>
+            <tr><th><a href="global.html#proc/send2chat">send2chat</a></th><td>Sends a message to TGS chat channels.</td></tr>
+            <tr><th><a href="global.html#proc/send_ooc_announcement">send_ooc_announcement</a></th><td>Sends a div formatted chat box announcement</td></tr>
+            <tr><th><a href="global.html#proc/set_z_lighting">set_z_lighting</a></th><td>Modifies the lighting for a z_level</td></tr>
+            <tr><th><a href="global.html#proc/siunit">siunit</a></th><td>Formats a number to human readable form with the appropriate SI unit.</td></tr>
+            <tr><th><a href="global.html#proc/sort_list">sort_list</a></th><td>sort any value in a list</td></tr>
+            <tr><th><a href="global.html#proc/sort_names">sort_names</a></th><td>uses sort_list() but uses the var's name specifically. This should probably be using mergeAtom() instead</td></tr>
+            <tr><th><a href="global.html#proc/start_log">start_log</a></th><td>ship both attack logs and victim logs to the end of round attack.log just to ensure we don't lose information</td></tr>
+            <tr><th><a href="global.html#proc/string_list">string_list</a></th><td>Caches lists with non-numeric stringify-able values (text or typepath).</td></tr>
+            <tr><th><a href="global.html#proc/strip_appearance_underlays">strip_appearance_underlays</a></th><td>Strips all underlays on a different plane from an appearance.
+Returns the stripped appearance.</td></tr>
+            <tr><th><a href="global.html#proc/strip_html">strip_html</a></th><td>Runs STRIP_HTML_SIMPLE and sanitize.</td></tr>
+            <tr><th><a href="global.html#proc/stripped_input">stripped_input</a></th><td>Used to get a properly sanitized input. Returns null if cancel is pressed.</td></tr>
+            <tr><th><a href="global.html#proc/stripped_multiline_input">stripped_multiline_input</a></th><td>Used to get a properly sanitized input in a larger box. Works very similarly to stripped_input.</td></tr>
+            <tr><th><a href="global.html#proc/turf_block_check">turf_block_check</a></th><td>Return TRUE if we have a block, return FALSE otherwise</td></tr>
+            <tr><th><a href="global.html#proc/unique_list">unique_list</a></th><td>Return a list with no duplicate entries</td></tr>
+            <tr><th><a href="global.html#proc/unique_list_in_place">unique_list_in_place</a></th><td>same as unique_list, but returns nothing and acts on list in place (also handles associated values properly)</td></tr>
+            <tr><th><a href="global.html#proc/url2htmlloader">url2htmlloader</a></th><td>Return html to load a url.
+for use inside of browse() calls to html assets that might be loaded on a cdn.</td></tr>
+            <tr><th><a href="global.html#proc/valid_build_direction">valid_build_direction</a></th><td>Checks whether the target turf is in a valid state to accept a directional construction
+such as windows or railings.</td></tr>
+            <tr><th><a href="global.html#proc/view_to_pixels">view_to_pixels</a></th><td>Takes a string or num view, and converts it to pixel width/height in a list(pixel_width, pixel_height)</td></tr>
+            <tr><th><a href="global.html#proc/weight_class_data">weight_class_data</a></th><td>Returns an assoc list of WEIGHT CLASS TEXT = DESCRIPTION based on the arg you provide.
+Used by examine tags for giving each weight class a special description.</td></tr>
+            <tr><th><a href="global.html#proc/weight_class_to_text">weight_class_to_text</a></th><td>Returns a string based on the weight class define used as argument.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/Failsafe"><aside class="declaration">var </aside>Failsafe
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/controller/failsafe</aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/failsafe.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;failsafe.dm 7"/></a></h3>
+        <p>Failsafe</p>
+<p>Pretty much pokes the MC to make sure it's still alive.</p><h3 id="var/Master"><aside class="declaration">var </aside>Master
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/controller/master.html">controller/master</a></aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/master.dm#L11">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;master.dm 11"/></a></h3>
+        <p>StonedMC</p>
+<p>Designed to properly split up a given tick among subsystems
+Note: if you read parts of this code and think &quot;why is it doing it that way&quot;
+Odds are, there is a reason</p><h3 id="var/SSambience"><aside class="declaration">var </aside>SSambience
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/controller/subsystem.html">controller/subsystem</a>/<a href="datum/controller/subsystem/ambience.html">ambience</a></aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/subsystem/ambience.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;ambience.dm 2"/></a></h3>
+        <p>The subsystem used to play ambience to users every now and then, makes them real excited.</p><h3 id="var/SSarea_contents"><aside class="declaration">var </aside>SSarea_contents
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/controller/subsystem.html">controller/subsystem</a>/area_contents</aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/subsystem/area_contents.dm#L9">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;area_contents.dm 9"/></a></h3>
+        <p>Responsible for managing the sizes of area.contained_turfs and area.turfs_to_uncontain
+These lists do not check for duplicates, which is fine, but it also means they can balloon in size over time
+as a consequence of repeated changes in area in a space
+They additionally may not always resolve often enough to avoid memory leaks
+This is annoying, so lets keep an eye on them and cut them down to size if needed</p><h3 id="var/SSasset_loading"><aside class="declaration">var </aside>SSasset_loading
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/controller/subsystem.html">controller/subsystem</a>/asset_loading</aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/subsystem/asset_loading.dm#L4">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;asset_loading.dm 4"/></a></h3>
+        <p>Allows us to lazyload asset datums
+Anything inserted here will fully load if directly gotten
+So this just serves to remove the requirement to load assets fully during init</p><h3 id="var/SSaura"><aside class="declaration">var </aside>SSaura
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/controller/subsystem.html">controller/subsystem</a>/<a href="datum/controller/subsystem/aura.html">aura</a></aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/subsystem/aura.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;aura.dm 2"/></a></h3>
+        <p>Tracks aura emitters and tells them to pulse. Also used for creating new ones.</p><h3 id="var/SSautomatedfire"><aside class="declaration">var </aside>SSautomatedfire
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/controller/subsystem.html">controller/subsystem</a>/<a href="datum/controller/subsystem/automatedfire.html">automatedfire</a></aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/subsystem/autofire.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;autofire.dm 18"/></a></h3>
+        <hh1 id="autofire-subsystem">Autofire Subsystem</hh1>
+<p>Maintains a timer-like system to handle autofiring. Much of this code is modeled
+after or adapted from the runechat subsytem.</p>
+<p>Note that this has the same structure for storing and queueing shooter component as the timer subsystem does
+for handling timers: the bucket_list is a list of autofire component, each of which are the head
+of a linked list. Any given index in bucket_list could be null, representing an empty bucket.</p>
+<p>Doesn't support any event scheduled for more than 100 ticks in the future, as it has no secondary queue by design</p><h3 id="var/SSdiscord"><aside class="declaration">var </aside>SSdiscord
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/controller/subsystem.html">controller/subsystem</a>/<a href="datum/controller/subsystem/discord.html">discord</a></aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/subsystem/discord.dm#L31">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;discord.dm 31"/></a></h3>
+        <hh1 id="discord-subsystem">Discord Subsystem</hh1>
+<p>This subsystem handles some integrations with discord</p>
+<p>NOTES:</p>
+<ul>
+<li>There is a DB table to track ckeys and associated discord IDs. (discord_link)</li>
+<li>This system REQUIRES TGS for notifying users at end of the round</li>
+<li>The SS uses fire() instead of just pure shutdown, so people can be notified if it comes back after a crash, where the SS wasn't properly shutdown</li>
+<li>It only writes to the disk every 5 minutes, and it won't write to disk if the file is the same as it was the last time it was written. This is to save on disk writes</li>
+<li>The system is kept per-server (EG: Terry will not notify people who pressed notify on Sybil), but the accounts are between servers so you dont have to relink on each server.</li>
+</ul>
+<hh2 id="how-notifying-works">HOW NOTIFYING WORKS</hh2><hh3 id="roundstart">ROUNDSTART:</hh3>
+<ol>
+<li>The file is loaded and the discord IDs are extracted</li>
+<li>A ping is sent to the discord with the IDs of people who wished to be notified</li>
+<li>The file is emptied</li>
+</ol>
+<hh3 id="midround">MIDROUND:</hh3>
+<ol>
+<li>Someone usees the notify verb, it adds their discord ID to the list.</li>
+<li>On fire, it will write that to the disk, as long as conditions above are correct</li>
+</ol>
+<hh3 id="end-round">END ROUND:</hh3>
+<ol>
+<li>The file is force-saved, incase it hasn't fired at end round</li>
+</ol>
+<p>This is an absolute clusterfuck, but its my clusterfuck -aa07</p><h3 id="var/SSearly_assets"><aside class="declaration">var </aside>SSearly_assets
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/controller/subsystem.html">controller/subsystem</a>/early_assets</aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/subsystem/early_asset.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;early_asset.dm 2"/></a></h3>
+        <p>Initializes any assets that need to be loaded ASAP, before the atoms SS initializes.</p><h2 id="proc">Proc Details</h2><h3 id="proc/DirBlocked"><aside class="declaration">proc </aside>DirBlocked<aside>(/<a href="turf.html">turf</a>/loc, direction, pass_flags_checked) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L205">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 205"/></a></aside>
+        </h3>
+        <p>Checks if moving in a direction is blocked</p><h3 id="proc/LeftAndRightOfDir"><aside class="declaration">proc </aside>LeftAndRightOfDir<aside>(direction, diagonal_check) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L1133">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 1133"/></a></aside>
+        </h3>
+        <p>Returns the left and right dir of the input dir, used for AI stutter step while attacking</p><h3 id="proc/LinkBlocked"><aside class="declaration">proc </aside>LinkBlocked<aside>(/<a href="turf.html">turf</a>/A, /<a href="turf.html">turf</a>/B, pass_flags_checked) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L179">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 179"/></a></aside>
+        </h3>
+        <p>Returns true if the path from A to B is blocked. Checks both paths where the direction is diagonal</p><h3 id="proc/TurfBlockedNonWindow"><aside class="declaration">proc </aside>TurfBlockedNonWindow<aside>(/<a href="turf.html">turf</a>/loc) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L219">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 219"/></a></aside>
+        </h3>
+        <p>Returns true if any object on a turf is both dense and not a window</p><h3 id="proc/___TraitAdd"><aside class="declaration">proc </aside>___TraitAdd<aside>(target, trait, source) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/traits.dm#L5">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;traits.dm 5"/></a></aside>
+        </h3>
+        <p>DO NOT USE ___TraitAdd OR ___TraitRemove as a replacement for ADD_TRAIT / REMOVE_TRAIT defines. To be used explicitly for callback.</p><h3 id="proc/___TraitRemove"><aside class="declaration">proc </aside>___TraitRemove<aside>(target, trait, source) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/traits.dm#L20">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;traits.dm 20"/></a></aside>
+        </h3>
+        <p>DO NOT USE ___TraitAdd OR ___TraitRemove as a replacement for ADD_TRAIT / REMOVE_TRAIT defines. To be used explicitly for callback.</p><h3 id="proc/__check_serialization_semver"><aside class="declaration">proc </aside>__check_serialization_semver<aside>(wanted, actual) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/_logging.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;_logging.dm 18"/></a></aside>
+        </h3>
+        <p>Checks if the actual semver is equal or later than the wanted semver
+Must be passed as TEXT; you're probably looking for CHECK_SERIALIZATION_SEMVER, look right above</p><h3 id="proc/add_keybinding"><aside class="declaration">proc </aside>add_keybinding<aside>(/<a href="datum.html">datum</a>/keybinding/instance) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_globalvars/lists/keybinding.dm#L14">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_globalvars&#x2F;lists&#x2F;keybinding.dm 14"/></a></aside>
+        </h3>
+        <p>Adds an instanced keybinding to the global tracker</p><h3 id="proc/add_verb"><aside class="declaration">proc </aside>add_verb<aside>(/<a href="client.html">client</a>/target, verb_or_list_to_add) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/verbs.dm#L9">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;verbs.dm 9"/></a></aside>
+        </h3>
+        <p>handles adding verbs and updating the stat panel browser</p>
+<p>pass the verb type path to this instead of adding it directly to verbs so the statpanel can update
+Arguments:</p>
+<ul>
+<li>target - Who the verb is being added to, client or mob typepath</li>
+<li>verb - typepath to a verb, or a list of verbs, supports lists of lists</li>
+</ul><h3 id="proc/adminscrub"><aside class="declaration">proc </aside>adminscrub<aside>(text, limit) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/text.dm#L31">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;text.dm 31"/></a></aside>
+        </h3>
+        <p>Runs STRIP_HTML_SIMPLE and byond's sanitization proc.</p><h3 id="proc/alone_in_area"><aside class="declaration">proc </aside>alone_in_area<aside>(/area/the_area, /<a href="mob.html">mob</a>/must_be_alone, check_type) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L367">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 367"/></a></aside>
+        </h3>
+        <p>Checks if the mob provided (must_be_alone) is alone in an area</p><h3 id="proc/angle_to_cardinal_dir"><aside class="declaration">proc </aside>angle_to_cardinal_dir<aside>(angle) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L161">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 161"/></a></aside>
+        </h3>
+        <p>Returns one of the 4 cardinal directions based on an angle</p><h3 id="proc/angle_to_dir"><aside class="declaration">proc </aside>angle_to_dir<aside>(angle) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L141">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 141"/></a></aside>
+        </h3>
+        <p>Returns one of the 8 directions based on an angle</p><h3 id="proc/assemble_alert"><aside class="declaration">proc </aside>assemble_alert<aside>(title, subtitle, message, color_override, minor) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/announce.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;announce.dm 30"/></a></aside>
+        </h3>
+        <p>Design a faction alert. Returns a string.</p>
+<p>Arguments</p>
+<ul>
+<li>title - required, the title to use for this alert</li>
+<li>subtitle - optional, the subtitle/subheader to use for this alert</li>
+<li>message - required, the message to use for this alert</li>
+<li>color_override - optional, the color to use for this alert instead of blue</li>
+<li>minor - is this a minor alert?</li>
+</ul><h3 id="proc/assertion_message"><aside class="declaration">proc </aside>assertion_message<aside>(file, line, condition, message) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__DEFINES/assert.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__DEFINES&#x2F;assert.dm 10"/></a></aside>
+        </h3>
+        <p>Used by ASSERT to add a more detailed context to CRASH messages</p><h3 id="proc/assign_random_name"><aside class="declaration">proc </aside>assign_random_name<aside>(len, prefix, postfix) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/names.dm#L15">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;names.dm 15"/></a></aside>
+        </h3>
+        <p>Generate a name devices</p>
+<p>Creates a randomly generated tag or name for devices or anything really
+it keeps track of a special list that makes sure no name is used more than
+once</p>
+<p>args:</p>
+<ul>
+<li>len (int)(Optional) Default=5 The length of the name</li>
+<li>prefix (string)(Optional) static text in front of the random name</li>
+<li>postfix (string)(Optional) static text in back of the random name
+Returns (string) The generated name</li>
+</ul><h3 id="proc/assoc_to_keys"><aside class="declaration">proc </aside>assoc_to_keys<aside>(/list/input) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_lists.dm#L547">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 547"/></a></aside>
+        </h3>
+        <p>Turns an associative list into a flat list of keys</p><h3 id="proc/auxtools_expr_stub"><aside class="declaration">proc </aside>auxtools_expr_stub<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__DEFINES/spaceman_dmm.dm#L80">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__DEFINES&#x2F;spaceman_dmm.dm 80"/></a></aside>
+        </h3>
+        <p>auxtools expression evaluation</p><h3 id="proc/bitfield_to_list"><aside class="declaration">proc </aside>bitfield_to_list<aside>(bitfield, /list/wordlist) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_lists.dm#L679">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 679"/></a></aside>
+        </h3>
+        <p>Converts a bitfield to a list of numbers (or words if a wordlist is provided)</p><h3 id="proc/blend_cutoff_colors"><aside class="declaration">proc </aside>blend_cutoff_colors<aside>(/list/first_color, /list/second_color) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/colors.dm#L23">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;colors.dm 23"/></a></aside>
+        </h3>
+        <p>Used to blend together two different color cutoffs
+Uses the screen blendmode under the hood, essentially just <a href="global.html#proc/blend_screen_color" title="/global">/proc/blend_screen_color</a>
+But paired down and modified to work for our color range
+Accepts the color cutoffs as two 3 length list(0-100,...) arguments</p><h3 id="proc/blend_screen_color"><aside class="declaration">proc </aside>blend_screen_color<aside>(/list/first_color, /list/second_color) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/colors.dm#L5">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;colors.dm 5"/></a></aside>
+        </h3>
+        <p>Blends together two colors (passed as 3 or 4 length lists) using the screen blend mode
+Much like multiply, screen effects the brightness of the resulting color
+Screen blend will always lighten the resulting color, since before multiplication we invert the colors
+This makes our resulting output brighter instead of darker</p><h3 id="proc/can_see_through"><aside class="declaration">proc </aside>can_see_through<aside>(/<a href="turf.html">turf</a>/from_turf, /<a href="turf.html">turf</a>/to_turf) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/math.dm#L78">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;math.dm 78"/></a></aside>
+        </h3>
+        <p>Returns if a turf can be seen from another turf.</p><h3 id="proc/center_image"><aside class="declaration">proc </aside>center_image<aside>(/image/image_to_center, x_dimension, y_dimension) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icons.dm#L1255">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icons.dm 1255"/></a></aside>
+        </h3>
+        <p>Center's an image.
+Requires:
+The Image
+The x dimension of the icon file used in the image
+The y dimension of the icon file used in the image
+eg: center_image(image_to_center, 32,32)
+eg2: center_image(image_to_center, 96,96)</p><h3 id="proc/cheap_get_atom"><aside class="declaration">proc </aside>cheap_get_atom<aside>(/<a href="atom.html">atom</a>/center, type, distance, /list/list_to_search) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/ai.dm#L190">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;ai.dm 190"/></a></aside>
+        </h3>
+        <p>This proc attempts to get an instance of an atom type within distance, with center as the center.
+Arguments</p>
+<ul>
+<li>center - The center of the search</li>
+<li>type - The type of atom we're looking for</li>
+<li>distance - The distance we should search</li>
+<li>list_to_search - The list to look through for the type</li>
+</ul><h3 id="proc/cheap_get_humans_near"><aside class="declaration">proc </aside>cheap_get_humans_near<aside>(/<a href="atom.html">atom</a>/source, distance) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/ai.dm#L15">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;ai.dm 15"/></a></aside>
+        </h3>
+        <p>Returns a list of humans via get_dist and same z level method, very cheap compared to range()</p><h3 id="proc/cheap_get_living_near"><aside class="declaration">proc </aside>cheap_get_living_near<aside>(/<a href="atom.html">atom</a>/source, distance) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/ai.dm#L5">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;ai.dm 5"/></a></aside>
+        </h3>
+        <p>Returns a list of mobs/living via get_dist and same z level method, very cheap compared to range()</p><h3 id="proc/cheap_get_mechs_near"><aside class="declaration">proc </aside>cheap_get_mechs_near<aside>(/<a href="atom.html">atom</a>/source, distance) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/ai.dm#L43">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;ai.dm 43"/></a></aside>
+        </h3>
+        <p>Returns a list of mechs via get_dist and same z level method, very cheap compared to range()</p><h3 id="proc/cheap_get_tanks_near"><aside class="declaration">proc </aside>cheap_get_tanks_near<aside>(/<a href="atom.html">atom</a>/source, distance) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/ai.dm#L58">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;ai.dm 58"/></a></aside>
+        </h3>
+        <p>Returns a list of vehicles via get_dist and same z level method, very cheap compared to range()</p><h3 id="proc/cheap_get_xenos_near"><aside class="declaration">proc </aside>cheap_get_xenos_near<aside>(/<a href="atom.html">atom</a>/source, distance) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/ai.dm#L28">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;ai.dm 28"/></a></aside>
+        </h3>
+        <p>Returns a list of xenos via get_dist and same z level method, very cheap compared to range()</p><h3 id="proc/check_path"><aside class="declaration">proc </aside>check_path<aside>(/<a href="atom.html">atom</a>/start, /<a href="atom.html">atom</a>/end, pass_flags_checked) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L1232">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 1232"/></a></aside>
+        </h3>
+        <p>Draws a line between two atoms, then checks if the path is blocked
+Returns the last turf in the list it can successfully path to</p><h3 id="proc/check_topdown_validity"><aside class="declaration">proc </aside>check_topdown_validity<aside>(/mutable_appearance/thing_to_check) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_planes.dm#L98">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_planes.dm 98"/></a></aside>
+        </h3>
+        <p>Checks if a passed in MA or atom is allowed to have its current plane/layer matchup</p><h3 id="proc/circle_range"><aside class="declaration">proc </aside>circle_range<aside>(center, radius) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L221">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 221"/></a></aside>
+        </h3>
+        <p>Returns all atoms present in a circle around the center</p><h3 id="proc/circle_range_turfs"><aside class="declaration">proc </aside>circle_range_turfs<aside>(center, radius) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L260">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 260"/></a></aside>
+        </h3>
+        <p>Returns a list of turfs around a center based on RANGE_TURFS()</p><h3 id="proc/circle_view"><aside class="declaration">proc </aside>circle_view<aside>(center, radius) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L236">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 236"/></a></aside>
+        </h3>
+        <p>Returns all atoms present in a circle around the center but uses view() instead of range() (Currently not used)</p><h3 id="proc/circle_view_turfs"><aside class="declaration">proc </aside>circle_view_turfs<aside>(center, radius) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L274">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 274"/></a></aside>
+        </h3>
+        <p>Returns a list of turfs around a center based on view()</p><h3 id="proc/closest_cardinal_dir"><aside class="declaration">proc </aside>closest_cardinal_dir<aside>(dir) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L631">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 631"/></a></aside>
+        </h3>
+        <p>If given a diagonal dir, return a corresponding cardinal dir. East/west preferred</p><h3 id="proc/cmp_crafting_req_priority"><aside class="declaration">proc </aside>cmp_crafting_req_priority<aside>(A, B) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/cmp.dm#L111">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;cmp.dm 111"/></a></aside>
+        </h3>
+        <p>Sorts crafting recipe requirements before the crafting recipe is inserted into GLOB.crafting_recipes</p>
+<p>Prioritises <a href="datum.html" title="/datum">/datum/reagent</a> to ensure reagent requirements are always processed first when crafting.
+This prevents any reagent_containers from being consumed before the reagents they contain, which can
+lead to runtimes and item duplication when it happens.</p><h3 id="proc/color_hex2color_matrix"><aside class="declaration">proc </aside>color_hex2color_matrix<aside>(string) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/type2type.dm#L302">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;type2type.dm 302"/></a></aside>
+        </h3>
+        <p>Takes a hex color provided as string and returns the proper color matrix using hex2num.</p><h3 id="proc/color_matrix2color_hex"><aside class="declaration">proc </aside>color_matrix2color_hex<aside>(/list/the_matrix) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/type2type.dm#L318">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;type2type.dm 318"/></a></aside>
+        </h3>
+        <p>will drop all values not on the diagonal
+returns a hex color</p><h3 id="proc/compare_list"><aside class="declaration">proc </aside>compare_list<aside>(/list/l, /list/d) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_lists.dm#L554">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 554"/></a></aside>
+        </h3>
+        <p>flat list comparison, checks if two lists have the same contents</p><h3 id="proc/create_ooc_announcement_div"><aside class="declaration">proc </aside>create_ooc_announcement_div<aside>(message, style_override) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/ooc_announcement.dm#L77">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;ooc_announcement.dm 77"/></a></aside>
+        </h3>
+        <p>Inserts a span styled message into an OOC alert style div</p>
+<p>Arguments</p>
+<ul>
+<li>message - required, the message contents</li>
+<li>style_override - required, set the div style</li>
+</ul><h3 id="proc/cut_relative_direction"><aside class="declaration">proc </aside>cut_relative_direction<aside>(fragment) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/screen_objs.dm#L101">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;screen_objs.dm 101"/></a></aside>
+        </h3>
+        <p>Takes a screen_loc string and cut out any directions like NORTH or SOUTH</p><h3 id="proc/deadchat_broadcast"><aside class="declaration">proc </aside>deadchat_broadcast<aside>(message, source, /<a href="mob.html">mob</a>/follow_target, /<a href="turf.html">turf</a>/turf_target, speaker_key, message_type, runechat_msg, /<a href="atom.html">atom</a>/runechat_source) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/mobs.dm#L162">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;mobs.dm 162"/></a></aside>
+        </h3>
+        <p>Displays a message in deadchat, sent by source. Source is not linkified, message is, to avoid stuff like character names to be linkified.
+Automatically gives the class deadsay to the whole message (message + source)</p><h3 id="proc/delete_all_SS_and_recreate_master"><aside class="declaration">proc </aside>delete_all_SS_and_recreate_master<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/failsafe.dm#L163">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;failsafe.dm 163"/></a></aside>
+        </h3>
+        <p>Delete all existing SS to basically start over</p><h3 id="proc/do_after"><aside class="declaration">proc </aside>do_after<aside>(/<a href="mob.html">mob</a>/user, delay, timed_action_flags, /<a href="atom.html">atom</a>/target, user_display, target_display, prog_bar, /<a href="datum.html">datum</a>/callback/extra_checks) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/mobs.dm#L73">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;mobs.dm 73"/></a></aside>
+        </h3>
+        <p>A delayed action with adjustable checks</p><h3 id="proc/dview"><aside class="declaration">proc </aside>dview<aside>(range, center, invis_flags) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L991">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 991"/></a></aside>
+        </h3>
+        <p>Version of view() which ignores darkness, because BYOND doesn't have it (I actually suggested it but it was tagged redundant, BUT HEARERS IS A T- /rant).</p><h3 id="proc/emissive_appearance"><aside class="declaration">proc </aside>emissive_appearance<aside>(icon, icon_state, /<a href="atom.html">atom</a>/offset_spokesman, layer, alpha, appearance_flags, offset_const) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/lighting.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;lighting.dm 2"/></a></aside>
+        </h3>
+        <p>Produces a mutable appearance glued to the [EMISSIVE_PLANE] dyed to be the <a href="code/__DEFINES/lighting.html#define/EMISSIVE_COLOR" title="EMISSIVE_COLOR">EMISSIVE_COLOR</a>.</p><h3 id="proc/emissive_blocker"><aside class="declaration">proc </aside>emissive_blocker<aside>(icon, icon_state, /<a href="atom.html">atom</a>/offset_spokesman, layer, alpha, appearance_flags, offset_const) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/lighting.dm#L38">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;lighting.dm 38"/></a></aside>
+        </h3>
+        <p>Produces a mutable appearance glued to the [EMISSIVE_PLANE] dyed to be the <a href="code/__DEFINES/lighting.html#define/EM_BLOCK_COLOR" title="EM_BLOCK_COLOR">EM_BLOCK_COLOR</a>.</p><h3 id="proc/filter_fancy_list"><aside class="declaration">proc </aside>filter_fancy_list<aside>(/list/fancy_list, filter) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/type_processing.dm#L58">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;type_processing.dm 58"/></a></aside>
+        </h3>
+        <p>Takes a given fancy list and filters out a given filter text.
+Args:
+fancy_list - The list provided we filter.
+filter - the text we use to filter fancy_list</p><h3 id="proc/flick_overlay_view"><aside class="declaration">proc </aside>flick_overlay_view<aside>(/image/image_to_show, /<a href="atom.html">atom</a>/target, duration) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/game.dm#L88">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;game.dm 88"/></a></aside>
+        </h3>
+        <p>wrapper for flick_overlay(), flicks to everyone who can see the target atom</p><h3 id="proc/generate_and_hash_rsc_file"><aside class="declaration">proc </aside>generate_and_hash_rsc_file<aside>(file, dmi_file_path) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icons.dm#L941">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icons.dm 941"/></a></aside>
+        </h3>
+        <p>generates a filename for a given asset.
+like generate_asset_name(), except returns the rsc reference and the rsc file hash as well as the asset name (sans extension)
+used so that certain asset files dont have to be hashed twice</p><h3 id="proc/generate_asset_name"><aside class="declaration">proc </aside>generate_asset_name<aside>(file) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icons.dm#L955">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icons.dm 955"/></a></aside>
+        </h3>
+        <p>Generate a filename for this asset
+The same asset will always lead to the same asset name
+(Generated names do not include file extention.)</p><h3 id="proc/generate_cone"><aside class="declaration">proc </aside>generate_cone<aside>(/<a href="atom.html">atom</a>/center, max_row_count, starting_row, cone_width, cone_direction, blocked, pass_flags_checked) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L1188">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 1188"/></a></aside>
+        </h3>
+        <p>Generates a cone shape. Any other checks should be handled with the resulting list. Can work with up to 359 degrees
+Variables:
+center - where the cone begins, or center of a circle drawn with this
+max_row_count - how many rows are checked
+starting_row - from how far should the turfs start getting included in the cone. -1 required to include center turf due to byond
+cone_width - big the angle of the cone is
+cone_direction - at what angle should the cone be made, relative to the game board's orientation
+blocked - whether the cone should take into consideration obstacles</p><h3 id="proc/generate_lazy_template_map"><aside class="declaration">proc </aside>generate_lazy_template_map<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/lazy_templates.dm#L8">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;lazy_templates.dm 8"/></a></aside>
+        </h3>
+        <p>Iterates through all lazy template datums that exist and returns a list of them as an associative list of key -&gt; instance.</p>
+<p>Screams if more than one key exists, loudly.</p><h3 id="proc/get_adjacent_areas"><aside class="declaration">proc </aside>get_adjacent_areas<aside>(/<a href="atom.html">atom</a>/center) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L357">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 357"/></a></aside>
+        </h3>
+        <p>Returns a list of all areas that are adjacent to the center atom's area, clear the list of nulls at the end.</p><h3 id="proc/get_adjacent_open_areas"><aside class="declaration">proc </aside>get_adjacent_open_areas<aside>(/<a href="atom.html">atom</a>/center) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L332">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 332"/></a></aside>
+        </h3>
+        <p>Returns a list with all the adjacent areas by getting the adjacent open turfs</p><h3 id="proc/get_adjacent_open_turfs"><aside class="declaration">proc </aside>get_adjacent_open_turfs<aside>(/<a href="atom.html">atom</a>/center) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L322">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 322"/></a></aside>
+        </h3>
+        <p>Returns a list with all the adjacent open turfs. Clears the list of nulls in the end.</p><h3 id="proc/get_areas"><aside class="declaration">proc </aside>get_areas<aside>(areatype, subtypes) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L1144">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 1144"/></a></aside>
+        </h3>
+        <p>Takes: Area type as text string or as typepath OR an instance of the area. Returns: A list of all areas of that type in the world.</p><h3 id="proc/get_areas_in_range"><aside class="declaration">proc </aside>get_areas_in_range<aside>(distance, /<a href="atom.html">atom</a>/center) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L343">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 343"/></a></aside>
+        </h3>
+        <p>Returns a list with the names of the areas around a center at a certain distance
+Returns the local area if no distance is indicated
+Returns an empty list if the center is null</p><h3 id="proc/get_atom_on_turf"><aside class="declaration">proc </aside>get_atom_on_turf<aside>(/<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/something_in_turf, stop_type) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L915">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 915"/></a></aside>
+        </h3>
+        <p>Returns the top-most atom sitting on the turf.
+For example, using this on a disk, which is in a bag, on a mob,
+will return the mob because it's on the turf.</p>
+<p>Arguments</p>
+<ul>
+<li>something_in_turf - a movable within the turf, somewhere.</li>
+<li>stop_type - optional - stops looking if stop_type is found in the turf, returning that type (if found).</li>
+</ul><h3 id="proc/get_bbox_of_atoms"><aside class="declaration">proc </aside>get_bbox_of_atoms<aside>(/list/atoms) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L295">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 295"/></a></aside>
+        </h3>
+        <p>Get a bounding box of a list of atoms.</p>
+<p>Arguments:</p>
+<ul>
+<li>atoms - List of atoms. Can accept output of view() and range() procs.</li>
+</ul>
+<p>Returns: list(x1, y1, x2, y2)</p><h3 id="proc/get_between_angles"><aside class="declaration">proc </aside>get_between_angles<aside>(degree_one, degree_two) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L173">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 173"/></a></aside>
+        </h3>
+        <p>returns degrees between two angles</p><h3 id="proc/get_closest_atom"><aside class="declaration">proc </aside>get_closest_atom<aside>(type, /list/atom_list, source) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L414">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 414"/></a></aside>
+        </h3>
+        <p>Returns the closest atom of a specific type in a list from a source</p><h3 id="proc/get_dist_euclidian"><aside class="declaration">proc </aside>get_dist_euclidian<aside>(/<a href="atom.html">atom</a>/first_location, /<a href="atom.html">atom</a>/second_location) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L251">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 251"/></a></aside>
+        </h3>
+        <p>Returns the distance between two atoms</p><h3 id="proc/get_dist_manhattan"><aside class="declaration">proc </aside>get_dist_manhattan<aside>(/<a href="atom.html">atom</a>/A, /<a href="atom.html">atom</a>/B) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/math.dm#L160">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;math.dm 160"/></a></aside>
+        </h3>
+        <p>Returns the manhattan distance between two atoms. Returns INFINITY if either are not on a turf, for BYOND get_dist() parity.</p><h3 id="proc/get_fancy_list_of_atom_types"><aside class="declaration">proc </aside>get_fancy_list_of_atom_types<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/type_processing.dm#L39">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;type_processing.dm 39"/></a></aside>
+        </h3>
+        <p>Generates a static list of 'fancy' atom types, or returns that if its already been generated.</p><h3 id="proc/get_fancy_list_of_datum_types"><aside class="declaration">proc </aside>get_fancy_list_of_datum_types<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/type_processing.dm#L46">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;type_processing.dm 46"/></a></aside>
+        </h3>
+        <p>Generates a static list of 'fancy' datum types, excluding everything atom, or returns that if its already been generated.</p><h3 id="proc/get_forward_square"><aside class="declaration">proc </aside>get_forward_square<aside>(/<a href="atom.html">atom</a>/center, width, height, requires_openturf, requires_lineofsight) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L1278">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 1278"/></a></aside>
+        </h3>
+        <p>Returns a rectangle of turfs in front of the center.</p>
+<p>To find what exact width and height to enter, width is based on west-east and height is north-south as if center is facing north.</p>
+<p>Increments in width increases both sizes by said increment while height is only increased once by the increment.</p><h3 id="proc/get_hear"><aside class="declaration">proc </aside>get_hear<aside>(range, /<a href="atom.html">atom</a>/source) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L308">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 308"/></a></aside>
+        </h3>
+        <p>Like view but bypasses luminosity check</p><h3 id="proc/get_hearers_in_LOS"><aside class="declaration">proc </aside>get_hearers_in_LOS<aside>(view_radius, /<a href="atom.html">atom</a>/source) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L129">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 129"/></a></aside>
+        </h3>
+        <p>Returns a list of movable atoms that are hearing sensitive in view_radius and line of sight to source
+the majority of the work is passed off to the spatial grid if view_radius &gt; 0
+because view() isnt a raycasting algorithm, this does not hold symmetry to it. something in view might not be hearable with this.
+if you want that use get_hearers_in_view() - however thats significantly more expensive</p>
+<ul>
+<li>view_radius - what radius search circle we are using, worse performance as this increases but not as much as it used to</li>
+<li>source - object at the center of our search area. everything in get_turf(source) is guaranteed to be part of the search area</li>
+</ul><h3 id="proc/get_hearers_in_view"><aside class="declaration">proc </aside>get_hearers_in_view<aside>(view_radius, /<a href="atom.html">atom</a>/source) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L84">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 84"/></a></aside>
+        </h3>
+        <p>returns every hearaing movable in view to the turf of source not taking into account lighting
+useful when you need to maintain always being able to hear something if a sound is emitted from it and you can see it (and youre in range).
+otherwise this is just a more expensive version of get_hearers_in_LOS()</p>
+<ul>
+<li>view_radius - what radius search circle we are using, worse performance as this increases</li>
+<li>source - object at the center of our search area. everything in get_turf(source) is guaranteed to be part of the search area</li>
+</ul><h3 id="proc/get_icon_dmi_path"><aside class="declaration">proc </aside>get_icon_dmi_path<aside>(/icon/icon) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icons.dm#L989">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icons.dm 989"/></a></aside>
+        </h3>
+        <p>given an icon object, dmi file path, or atom/image/mutable_appearance, attempts to find and return an associated dmi file path.
+a weird quirk about dm is that /icon objects represent both compile-time or dynamic icons in the rsc,
+but stringifying rsc references returns a dmi file path
+ONLY if that icon represents a completely unchanged dmi file from when the game was compiled.
+so if the given object is associated with an icon that was in the rsc when the game was compiled, this returns a path. otherwise it returns &quot;&quot;</p><h3 id="proc/get_line"><aside class="declaration">proc </aside>get_line<aside>(/<a href="atom.html">atom</a>/starting_atom, /<a href="atom.html">atom</a>/ending_atom, cardinal_moves) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/math.dm#L6">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;math.dm 6"/></a></aside>
+        </h3>
+        <p>Get a list of turfs in a line from <code>starting_atom</code> to <code>ending_atom</code>.</p>
+<p>Uses the ultra-fast <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham Line-Drawing Algorithm</a>.</p><h3 id="proc/get_mech_limb"><aside class="declaration">proc </aside>get_mech_limb<aside>(slot, mech_type) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/mech.dm#L3">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;mech.dm 3"/></a></aside>
+        </h3>
+        <p>helper that converts greyscale mech slots and types into typepaths</p><h3 id="proc/get_nearest_target"><aside class="declaration">proc </aside>get_nearest_target<aside>(/<a href="atom.html">atom</a>/source, distance, target_flags, attacker_faction, attacker_hive, need_los) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/ai.dm#L78">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;ai.dm 78"/></a></aside>
+        </h3>
+        <p>Returns the nearest target that has the right target flag</p><h3 id="proc/get_nested_locs"><aside class="declaration">proc </aside>get_nested_locs<aside>(/<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/atom_on_location, include_turf) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L1168">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 1168"/></a></aside>
+        </h3>
+        <p>Returns a list of all locations (except the area) the movable is within.</p><h3 id="proc/get_open_turf_in_dir"><aside class="declaration">proc </aside>get_open_turf_in_dir<aside>(/<a href="atom.html">atom</a>/center, dir) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L316">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 316"/></a></aside>
+        </h3>
+        <p>Returns the open turf next to the center in a specific direction</p><h3 id="proc/get_path"><aside class="declaration">proc </aside>get_path<aside>(/<a href="atom.html">atom</a>/starting_atom, /<a href="atom.html">atom</a>/goal_atom, pathing_type) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/subsystem/advanced_pathfinding.dm#L91">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;advanced_pathfinding.dm 91"/></a></aside>
+        </h3>
+        <p>Returns the most optimal path to get from starting atom to goal atom</p><h3 id="proc/get_sorted_areas"><aside class="declaration">proc </aside>get_sorted_areas<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L931">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 931"/></a></aside>
+        </h3>
+        <p>Returns a sorted version of GLOB.areas, by name</p><h3 id="proc/get_traversal_line"><aside class="declaration">proc </aside>get_traversal_line<aside>(/<a href="atom.html">atom</a>/starting_atom, /<a href="atom.html">atom</a>/ending_atom) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/math.dm#L44">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;math.dm 44"/></a></aside>
+        </h3>
+        <p>Get a list of turfs in a line from <code>starting_atom</code> to <code>ending_atom</code>.
+Unlike get_line, this only takes cardinal steps, useful for checking movement or LOS
+Uses the ultra-fast <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham Line-Drawing Algorithm</a>.</p><h3 id="proc/get_valid_screen_location"><aside class="declaration">proc </aside>get_valid_screen_location<aside>(target_loc, target_offset, view) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/screen_objs.dm#L81">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;screen_objs.dm 81"/></a></aside>
+        </h3>
+        <p>Returns a valid location to place a screen object without overflowing the viewport</p>
+<ul>
+<li>target: The target location as a purely number based screen_loc string &quot;+-left-offset:+-pixel,+-bottom-offset:+-pixel&quot;</li>
+<li>target_offset: The amount we want to offset the target location by. We explictly don't care about direction here, we will try all 4</li>
+<li>view: The view variable of the client we're doing this for. We use this to get the size of the screen</li>
+</ul>
+<p>Returns a screen loc representing the valid location</p><h3 id="proc/get_view_center"><aside class="declaration">proc </aside>get_view_center<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/view.dm#L21">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;view.dm 21"/></a></aside>
+        </h3>
+        <p>Return the center turf of the user's view</p><h3 id="proc/getpois"><aside class="declaration">proc </aside>getpois<aside>(mobs_only, skip_mindless, specify_dead_role) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L1109">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 1109"/></a></aside>
+        </h3>
+        <p>Returns a list of all items of interest with their name</p><h3 id="proc/icon2base64"><aside class="declaration">proc </aside>icon2base64<aside>(/icon/icon) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icons.dm#L963">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icons.dm 963"/></a></aside>
+        </h3>
+        <p>Converts an icon to base64. Operates by putting the icon in the iconCache savefile,
+exporting it as text, and then parsing the base64 from that.
+(This relies on byond automatically storing icons in savefiles as base64)</p><h3 id="proc/icon2html"><aside class="declaration">proc </aside>icon2html<aside>(/<a href="atom.html">atom</a>/thing, /<a href="client.html">client</a>/target, icon_state, dir, frame, moving, sourceonly, extra_classes) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icons.dm#L1046">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icons.dm 1046"/></a></aside>
+        </h3>
+        <p>the dmi file path we attempt to return if the given object argument is associated with a stringifiable icon
+if successful, this looks like &quot;icons/path/to/dmi_file.dmi&quot;
+but they pass both isicon() and isfile() checks. theyre the easiest case since stringifying them gives us the path we want
+generate an asset for the given icon or the icon of the given appearance for [thing], and send it to any clients in target.
+Arguments:</p>
+<ul>
+<li>thing - either a /icon object, or an object that has an appearance (atom, image, mutable_appearance).</li>
+<li>target - either a reference to or a list of references to /client's or mobs with clients</li>
+<li>icon_state - string to force a particular icon_state for the icon to be used</li>
+<li>dir - dir number to force a particular direction for the icon to be used</li>
+<li>frame - what frame of the icon_state's animation for the icon being used</li>
+<li>moving - whether or not to use a moving state for the given icon</li>
+<li>sourceonly - if TRUE, only generate the asset and send back the asset url, instead of tags that display the icon to players</li>
+<li>extra_clases - string of extra css classes to use when returning the icon string</li>
+</ul><h3 id="proc/icon_exists"><aside class="declaration">proc </aside>icon_exists<aside>(file, state) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icons.dm#L1296">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icons.dm 1296"/></a></aside>
+        </h3>
+        <p>Checks whether a given icon state exists in a given icon file. If <code>file</code> and <code>state</code> both exist,
+this will return <code>TRUE</code> - otherwise, it will return <code>FALSE</code>.</p>
+<p>If you want a stack trace to be output when the given state/file doesn't exist, use
+<code>/proc/icon_exists_or_scream()</code>.</p><h3 id="proc/icon_exists_or_scream"><aside class="declaration">proc </aside>icon_exists_or_scream<aside>(file, state) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icons.dm#L1312">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icons.dm 1312"/></a></aside>
+        </h3>
+        <p>Functions the same as <code>/proc/icon_exists()</code>, but with the addition of a stack trace if the
+specified file or state doesn't exist.</p>
+<p>Stack traces will only be output once for each file.</p><h3 id="proc/inLineOfSight"><aside class="declaration">proc </aside>inLineOfSight<aside>(X1, Y1, X2, Y2, Z, PX1, PY1, PX2, PY2) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/spatial_info.dm#L180">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;spatial_info.dm 180"/></a></aside>
+        </h3>
+        <p>Calculate if two atoms are in sight, returns TRUE or FALSE</p><h3 id="proc/in_view_range"><aside class="declaration">proc </aside>in_view_range<aside>(/<a href="mob.html">mob</a>/user, /<a href="atom.html">atom</a>/A) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/view.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;view.dm 10"/></a></aside>
+        </h3>
+        <p>Returns TRUE if the atom is in the user view range.</p><h3 id="proc/init_campaign_asset_icons"><aside class="declaration">proc </aside>init_campaign_asset_icons<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_globalvars/lists/flavor_misc.dm#L327">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_globalvars&#x2F;lists&#x2F;flavor_misc.dm 327"/></a></aside>
+        </h3>
+        <p>Populates campaign_asset_icons</p><h3 id="proc/init_campaign_loadout_item_icons"><aside class="declaration">proc </aside>init_campaign_loadout_item_icons<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_globalvars/lists/flavor_misc.dm#L357">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_globalvars&#x2F;lists&#x2F;flavor_misc.dm 357"/></a></aside>
+        </h3>
+        <p>Populates campaign_loadout_item_icons</p><h3 id="proc/init_campaign_mission_icons"><aside class="declaration">proc </aside>init_campaign_mission_icons<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_globalvars/lists/flavor_misc.dm#L337">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_globalvars&#x2F;lists&#x2F;flavor_misc.dm 337"/></a></aside>
+        </h3>
+        <p>Populates campaign_mission_icons</p><h3 id="proc/init_campaign_perk_icons"><aside class="declaration">proc </aside>init_campaign_perk_icons<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_globalvars/lists/flavor_misc.dm#L347">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_globalvars&#x2F;lists&#x2F;flavor_misc.dm 347"/></a></aside>
+        </h3>
+        <p>Populates campaign_perk_icons</p><h3 id="proc/init_crafting_recipes"><aside class="declaration">proc </aside>init_crafting_recipes<aside>(/list/crafting_recipes) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/global_lists.dm#L99">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;global_lists.dm 99"/></a></aside>
+        </h3>
+        <p>Inits crafting recipe lists</p><h3 id="proc/init_crafting_recipes_atoms"><aside class="declaration">proc </aside>init_crafting_recipes_atoms<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/global_lists.dm#L148">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;global_lists.dm 148"/></a></aside>
+        </h3>
+        <p>Inits atoms used in crafting recipes</p><h3 id="proc/init_emote_keybinds"><aside class="declaration">proc </aside>init_emote_keybinds<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_globalvars/lists/keybinding.dm#L26">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_globalvars&#x2F;lists&#x2F;keybinding.dm 26"/></a></aside>
+        </h3>
+        <p>Create a keybind for each datum/emote</p><h3 id="proc/init_ethnicities"><aside class="declaration">proc </aside>init_ethnicities<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_globalvars/lists/flavor_misc.dm#L5">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_globalvars&#x2F;lists&#x2F;flavor_misc.dm 5"/></a></aside>
+        </h3>
+        <p>Ethnicity - Initialise all /datum/ethnicity into a list indexed by ethnicity name</p><h3 id="proc/init_keybindings"><aside class="declaration">proc </aside>init_keybindings<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_globalvars/lists/keybinding.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_globalvars&#x2F;lists&#x2F;keybinding.dm 2"/></a></aside>
+        </h3>
+        <p>Creates and sorts all the keybinding datums</p><h3 id="proc/init_minimap_icons"><aside class="declaration">proc </aside>init_minimap_icons<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_globalvars/lists/flavor_misc.dm#L319">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_globalvars&#x2F;lists&#x2F;flavor_misc.dm 319"/></a></aside>
+        </h3>
+        <p>Populates minimap_icons</p><h3 id="proc/init_sprite_accessories"><aside class="declaration">proc </aside>init_sprite_accessories<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/global_lists.dm#L16">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;global_lists.dm 16"/></a></aside>
+        </h3>
+        <p>Initial Building</p><h3 id="proc/is_ic_filtered"><aside class="declaration">proc </aside>is_ic_filtered<aside>(message) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/chat_filter.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;chat_filter.dm 7"/></a></aside>
+        </h3>
+        <p>Given a text, will return what word is on the IC filter, with the reason.
+Returns null if the message is OK.</p><h3 id="proc/is_ic_filtered_for_bombvests"><aside class="declaration">proc </aside>is_ic_filtered_for_bombvests<aside>(message) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/chat_filter.dm#L19">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;chat_filter.dm 19"/></a></aside>
+        </h3>
+        <p>Given a text, will return what word is on the IC filter, or bomb vest filter, with the reason.
+Returns null if the message is OK.</p><h3 id="proc/is_ooc_filtered"><aside class="declaration">proc </aside>is_ooc_filtered<aside>(message) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/chat_filter.dm#L31">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;chat_filter.dm 31"/></a></aside>
+        </h3>
+        <p>Given a text, will return what word is on the OOC filter, with the reason.
+Returns null if the message is OK.</p><h3 id="proc/is_soft_ic_filtered"><aside class="declaration">proc </aside>is_soft_ic_filtered<aside>(message) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/chat_filter.dm#L40">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;chat_filter.dm 40"/></a></aside>
+        </h3>
+        <p>Given a text, will return what word is on the soft IC filter, with the reason.
+Returns null if the message is OK.</p><h3 id="proc/is_soft_ic_filtered_for_bombvests"><aside class="declaration">proc </aside>is_soft_ic_filtered_for_bombvests<aside>(message) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/chat_filter.dm#L52">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;chat_filter.dm 52"/></a></aside>
+        </h3>
+        <p>Given a text, will return what word is on the soft IC filter, ignoring words allowed on the PDA, with the reason.
+Returns null if the message is OK.</p><h3 id="proc/is_soft_ooc_filtered"><aside class="declaration">proc </aside>is_soft_ooc_filtered<aside>(message) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/chat_filter.dm#L64">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;chat_filter.dm 64"/></a></aside>
+        </h3>
+        <p>Given a text, will return that word is on the soft OOC filter, with the reason.
+Returns null if the message is OK.</p><h3 id="proc/is_valid_dmi_file"><aside class="declaration">proc </aside>is_valid_dmi_file<aside>(icon_path) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icons.dm#L973">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icons.dm 973"/></a></aside>
+        </h3>
+        <p>given a text string, returns whether it is a valid dmi icons folder path</p><h3 id="proc/is_valid_for_resin_structure"><aside class="declaration">proc </aside>is_valid_for_resin_structure<aside>(/<a href="turf.html">turf</a>/target, needs_support, planned_building) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/game.dm#L9">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;game.dm 9"/></a></aside>
+        </h3>
+        <p>Checks all conditions if a spot is valid for construction , will return TRUE</p><h3 id="proc/is_valid_src"><aside class="declaration">proc </aside>is_valid_src<aside>(/<a href="datum.html">datum</a>/source_datum) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/datums.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;datums.dm 2"/></a></aside>
+        </h3>
+        <p>Check if a datum has not been deleted and is a valid source</p><h3 id="proc/jatum_deserialize"><aside class="declaration">proc </aside>jatum_deserialize<aside>(json) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/jatum.dm#L144">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;jatum.dm 144"/></a></aside>
+        </h3>
+        <p>Attempt to create a value from a JATUN JSON.</p>
+<ul>
+<li>json - The JSON to deserialize.</li>
+</ul><h3 id="proc/jatum_serialize"><aside class="declaration">proc </aside>jatum_serialize<aside>(value) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/jatum.dm#L17">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;jatum.dm 17"/></a></aside>
+        </h3>
+        <p>Attempt to serialize a given value to the JATUM format.</p>
+<ul>
+<li>value - The var to serialize.</li>
+</ul><h3 id="proc/line_of_sight"><aside class="declaration">proc </aside>line_of_sight<aside>(/<a href="atom.html">atom</a>/starting_atom, /<a href="atom.html">atom</a>/ending_atom, maximum_dist, ignore_target_opacity) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/math.dm#L94">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;math.dm 94"/></a></aside>
+        </h3>
+        <p>Checks if ending atom is viewable by starting atom, uses bresenham line algorithm but checks some extra tiles on a diagonal next tile</p><h3 id="proc/list_clear_nulls"><aside class="declaration">proc </aside>list_clear_nulls<aside>(/list/list_to_clear) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_lists.dm#L664">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 664"/></a></aside>
+        </h3>
+        <p>Removes any null entries from the list
+Returns TRUE if the list had nulls, FALSE otherwise</p><h3 id="proc/log_access"><aside class="declaration">proc </aside>log_access<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/game.dm#L34">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;game.dm 34"/></a></aside>
+        </h3>
+        <p>Logging for logging in &amp; out of the game, with error messages.</p><h3 id="proc/log_admin"><aside class="declaration">proc </aside>log_admin<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/admin.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;admin.dm 7"/></a></aside>
+        </h3>
+        <p>General logging for admin actions</p><h3 id="proc/log_admin_private"><aside class="declaration">proc </aside>log_admin_private<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/admin.dm#L13">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;admin.dm 13"/></a></aside>
+        </h3>
+        <p>General logging for admin actions</p><h3 id="proc/log_adminsay"><aside class="declaration">proc </aside>log_adminsay<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/admin.dm#L19">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;admin.dm 19"/></a></aside>
+        </h3>
+        <p>Logging for AdminSay (ASAY) messages</p><h3 id="proc/log_asset"><aside class="declaration">proc </aside>log_asset<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/debug.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;debug.dm 2"/></a></aside>
+        </h3>
+        <p>Logging for loading and caching assets</p><h3 id="proc/log_attack"><aside class="declaration">proc </aside>log_attack<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/attack.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;attack.dm 2"/></a></aside>
+        </h3>
+        <p>Generic attack logging</p><h3 id="proc/log_bomber"><aside class="declaration">proc </aside>log_bomber<aside>(/<a href="atom.html">atom</a>/user, details, /<a href="atom.html">atom</a>/bomb, additional_details, message_admins) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/attack.dm#L43">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;attack.dm 43"/></a></aside>
+        </h3>
+        <p>Logging for bombs detonating</p><h3 id="proc/log_combat"><aside class="declaration">proc </aside>log_combat<aside>(/<a href="atom.html">atom</a>/user, /<a href="atom.html">atom</a>/target, what_done, /<a href="atom.html">atom</a>/object, addition) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/attack.dm#L19">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;attack.dm 19"/></a></aside>
+        </h3>
+        <p>Log a combat message in the attack log</p>
+<p>Arguments:</p>
+<ul>
+<li>atom/user - argument is the actor performing the action</li>
+<li>atom/target - argument is the target of the action</li>
+<li>what_done - is a verb describing the action (e.g. punched, throwed, kicked, etc.)</li>
+<li>atom/object - is a tool with which the action was made (usually an item)</li>
+<li>addition - is any additional text, which will be appended to the rest of the log line</li>
+</ul><h3 id="proc/log_config"><aside class="declaration">proc </aside>log_config<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/debug.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;debug.dm 7"/></a></aside>
+        </h3>
+        <p>Logging for config errors
+Rarely gets called; just here in case the config breaks.</p><h3 id="proc/log_directed_talk"><aside class="declaration">proc </aside>log_directed_talk<aside>(/<a href="atom.html">atom</a>/source, /<a href="atom.html">atom</a>/target, message, message_type, tag) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/talk.dm#L28">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;talk.dm 28"/></a></aside>
+        </h3>
+        <p>Helper for logging of messages with only one sender and receiver (i.e. mind links)</p><h3 id="proc/log_dsay"><aside class="declaration">proc </aside>log_dsay<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/admin.dm#L31">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;admin.dm 31"/></a></aside>
+        </h3>
+        <p>Logging for DeadchatSay (DSAY) messages</p><h3 id="proc/log_emote"><aside class="declaration">proc </aside>log_emote<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/game.dm#L6">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;game.dm 6"/></a></aside>
+        </h3>
+        <p>Logging for emotes</p><h3 id="proc/log_ffattack"><aside class="declaration">proc </aside>log_ffattack<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/attack.dm#L6">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;attack.dm 6"/></a></aside>
+        </h3>
+        <p>Generic attack logging for friendly fire</p><h3 id="proc/log_filter"><aside class="declaration">proc </aside>log_filter<aside>(scope, message, filter_result) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/chat_filter.dm#L72">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;chat_filter.dm 72"/></a></aside>
+        </h3>
+        <p>Logs to the filter log with the given message, match, and scope</p><h3 id="proc/log_game"><aside class="declaration">proc </aside>log_game<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/game.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;game.dm 2"/></a></aside>
+        </h3>
+        <p>Logging for generic/unsorted game messages</p><h3 id="proc/log_hivemind"><aside class="declaration">proc </aside>log_hivemind<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/game.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;game.dm 10"/></a></aside>
+        </h3>
+        <p>Logging for hivemind messages</p><h3 id="proc/log_job_debug"><aside class="declaration">proc </aside>log_job_debug<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/debug.dm#L15">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;debug.dm 15"/></a></aside>
+        </h3>
+        <p>Logging for job slot changes</p><h3 id="proc/log_looc"><aside class="declaration">proc </aside>log_looc<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/game.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;game.dm 18"/></a></aside>
+        </h3>
+        <p>Logging for messages sent in LOOC</p><h3 id="proc/log_manifest"><aside class="declaration">proc </aside>log_manifest<aside>(ckey, /<a href="datum.html">datum</a>/mind/mind, /<a href="mob.html">mob</a>/body, latejoin) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/manifest.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;manifest.dm 2"/></a></aside>
+        </h3>
+        <p>Logging for player manifest (ckey, name, job, special role, roundstart/latejoin)</p><h3 id="proc/log_mapping"><aside class="declaration">proc </aside>log_mapping<aside>(text, skip_world_log) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/debug.dm#L19">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;debug.dm 19"/></a></aside>
+        </h3>
+        <p>Logging for mapping errors</p><h3 id="proc/log_mecha"><aside class="declaration">proc </aside>log_mecha<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/mecha.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;mecha.dm 2"/></a></aside>
+        </h3>
+        <p>Logging for mech actions</p><h3 id="proc/log_mentorsay"><aside class="declaration">proc </aside>log_mentorsay<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/admin.dm#L25">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;admin.dm 25"/></a></aside>
+        </h3>
+        <p>Logging for MentorSay (MSAY) messages</p><h3 id="proc/log_minimap_drawing"><aside class="declaration">proc </aside>log_minimap_drawing<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/game.dm#L42">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;game.dm 42"/></a></aside>
+        </h3>
+        <p>Logging for drawing on minimap</p><h3 id="proc/log_mooc"><aside class="declaration">proc </aside>log_mooc<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/game.dm#L26">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;game.dm 26"/></a></aside>
+        </h3>
+        <p>Logging for messages sent in MOOC</p><h3 id="proc/log_ooc"><aside class="declaration">proc </aside>log_ooc<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/game.dm#L14">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;game.dm 14"/></a></aside>
+        </h3>
+        <p>Logging for messages sent in OOC</p><h3 id="proc/log_paper"><aside class="declaration">proc </aside>log_paper<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/paper.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;paper.dm 2"/></a></aside>
+        </h3>
+        <p>Logging for writing made on paper</p><h3 id="proc/log_prayer"><aside class="declaration">proc </aside>log_prayer<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/game.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;game.dm 30"/></a></aside>
+        </h3>
+        <p>Logging for prayed messages</p><h3 id="proc/log_qdel"><aside class="declaration">proc </aside>log_qdel<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/debug.dm#L29">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;debug.dm 29"/></a></aside>
+        </h3>
+        <p>Logging for hard deletes</p><h3 id="proc/log_say"><aside class="declaration">proc </aside>log_say<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/talk.dm#L20">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;talk.dm 20"/></a></aside>
+        </h3>
+        <p>Logging for generic spoken messages</p><h3 id="proc/log_speech_indicators"><aside class="declaration">proc </aside>log_speech_indicators<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/talk.dm#L42">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;talk.dm 42"/></a></aside>
+        </h3>
+        <p>Logging for speech indicators.</p><h3 id="proc/log_sql"><aside class="declaration">proc </aside>log_sql<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/debug.dm#L40">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;debug.dm 40"/></a></aside>
+        </h3>
+        <p>Logging for DB errors</p><h3 id="proc/log_telecomms"><aside class="declaration">proc </aside>log_telecomms<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/talk.dm#L38">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;talk.dm 38"/></a></aside>
+        </h3>
+        <p>Logging for speech taking place over comms, as well as tcomms equipment</p><h3 id="proc/log_tgui"><aside class="declaration">proc </aside>log_tgui<aside>(user, message, context, /<a href="datum.html">datum</a>/tgui_window/window, /<a href="datum.html">datum</a>/src_object) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/ui.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;ui.dm 7"/></a></aside>
+        </h3>
+        <p>Appends a tgui-related log entry. All arguments are optional.</p><h3 id="proc/log_tool"><aside class="declaration">proc </aside>log_tool<aside>(text, /<a href="mob.html">mob</a>/initiator) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/tool.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;tool.dm 2"/></a></aside>
+        </h3>
+        <p>Logging for tool usage</p><h3 id="proc/log_topic"><aside class="declaration">proc </aside>log_topic<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/debug.dm#L44">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;debug.dm 44"/></a></aside>
+        </h3>
+        <p>Logging for world/Topic</p><h3 id="proc/log_transport"><aside class="declaration">proc </aside>log_transport<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/transport.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;transport.dm 2"/></a></aside>
+        </h3>
+        <p>Logging for transport (tram/elevator) actions</p><h3 id="proc/log_vote"><aside class="declaration">proc </aside>log_vote<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/game.dm#L38">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;game.dm 38"/></a></aside>
+        </h3>
+        <p>Logging for OOC votes</p><h3 id="proc/log_whisper"><aside class="declaration">proc </aside>log_whisper<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/talk.dm#L24">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;talk.dm 24"/></a></aside>
+        </h3>
+        <p>Logging for whispered messages</p><h3 id="proc/log_world"><aside class="declaration">proc </aside>log_world<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/debug.dm#L48">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;debug.dm 48"/></a></aside>
+        </h3>
+        <p>Log to both DD and the logfile.</p><h3 id="proc/log_xooc"><aside class="declaration">proc </aside>log_xooc<aside>(text, /list/data) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/game.dm#L22">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;game.dm 22"/></a></aside>
+        </h3>
+        <p>Logging for messages sent in XOOC</p><h3 id="proc/make_datum_reference_lists"><aside class="declaration">proc </aside>make_datum_reference_lists<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/global_lists.dm#L86">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;global_lists.dm 86"/></a></aside>
+        </h3>
+        <p>These should be replaced with proper _INIT macros</p><h3 id="proc/make_types_fancy"><aside class="declaration">proc </aside>make_types_fancy<aside>(/list/types) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/type_processing.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;type_processing.dm 2"/></a></aside>
+        </h3>
+        <p>Turns a list of typepaths into 'fancy' titles for admins.</p><h3 id="proc/md5asfile"><aside class="declaration">proc </aside>md5asfile<aside>(file) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/files.dm#L81">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;files.dm 81"/></a></aside>
+        </h3>
+        <p>Save file as an external file then md5 it.
+Used because md5ing files stored in the rsc sometimes gives incorrect md5 results.</p><h3 id="proc/md5filepath"><aside class="declaration">proc </aside>md5filepath<aside>(path) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/files.dm#L76">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;files.dm 76"/></a></aside>
+        </h3>
+        <p>Returns the md5 of a file at a given path.</p><h3 id="proc/minor_announce"><aside class="declaration">proc </aside>minor_announce<aside>(message, title, alert, /list/receivers, should_play_sound) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/announce.dm#L145">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;announce.dm 145"/></a></aside>
+        </h3>
+        <p>Make a minor announcement to a target</p>
+<p>Arguments</p>
+<ul>
+<li>message - required, this is the announcement message</li>
+<li>title - optional, the title of the announcement</li>
+<li>alert - optional, alert or notice?</li>
+<li>receivers - a list of all players to send the message to</li>
+</ul><h3 id="proc/offset_to_screen_loc"><aside class="declaration">proc </aside>offset_to_screen_loc<aside>(x_offset, y_offset, view) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/screen_objs.dm#L51">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;screen_objs.dm 51"/></a></aside>
+        </h3>
+        <p>Takes a list in the form (x_offset, y_offset)
+And converts it to a screen loc string
+Accepts an optional view string/size to force the screen_loc around, so it can't go out of scope</p><h3 id="proc/params2screenpixel"><aside class="declaration">proc </aside>params2screenpixel<aside>(scr_loc) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L729">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 729"/></a></aside>
+        </h3>
+        <p>Converts a screen loc param to a x,y coordinate pixel on the screen</p><h3 id="proc/partially_block_emissives"><aside class="declaration">proc </aside>partially_block_emissives<aside>(/<a href="atom.html">atom</a>/make_blocker, alpha_to_leave) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/lighting.dm#L64">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;lighting.dm 64"/></a></aside>
+        </h3>
+        <p>Takes a non area atom and a threshold
+Makes it block emissive with any pixels with more alpha then that threshold, with the rest allowing the light to pass
+Returns a list of objects, automatically added to your vis_contents, that apply this effect
+QDEL them when appropriate</p><h3 id="proc/peek"><aside class="declaration">proc </aside>peek<aside>(/list/target_list) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_lists.dm#L316">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 316"/></a></aside>
+        </h3>
+        <p>Returns the top (last) element from the list, does not remove it from the list. Stack functionality.</p><h3 id="proc/pick_weight_recursive"><aside class="declaration">proc </aside>pick_weight_recursive<aside>(/list/list_to_pick) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_lists.dm#L654">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 654"/></a></aside>
+        </h3>
+        <p>Like pickweight, but allowing for nested lists.</p>
+<p>For example, given the following list:
+list(A = 1, list(B = 1, C = 1))
+A would have a 50% chance of being picked,
+and list(B, C) would have a 50% chance of being picked.
+If list(B, C) was picked, B and C would then each have a 50% chance of being picked.
+So the final probabilities would be 50% for A, 25% for B, and 25% for C.</p>
+<p>Weights should be integers. Entries without weights are assigned weight 1 (so unweighted lists can be used as well)</p><h3 id="proc/pickweight"><aside class="declaration">proc </aside>pickweight<aside>(/list/list_to_pick) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_lists.dm#L276">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 276"/></a></aside>
+        </h3>
+        <p>Picks a random element from a list based on a weighting system.
+For example, given the following list:
+A = 6, B = 3, C = 1, D = 0
+A would have a 60% chance of being picked,
+B would have a 30% chance of being picked,
+C would have a 10% chance of being picked,
+and D would have a 0% chance of being picked.
+You should only pass integers in.</p><h3 id="proc/print_command_report"><aside class="declaration">proc </aside>print_command_report<aside>(papermessage, papertitle, announcemessage, announcetitle, announce) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/announce.dm#L123">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;announce.dm 123"/></a></aside>
+        </h3>
+        <p>Spawns a paper at each communications printer</p><h3 id="proc/priority_announce"><aside class="declaration">proc </aside>priority_announce<aside>(message, title, subtitle, type, sound, channel_override, color_override, /list/receivers, playing_sound) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/announce.dm#L66">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;announce.dm 66"/></a></aside>
+        </h3>
+        <p>Make a priority announcement to a target</p>
+<p>Arguments</p>
+<ul>
+<li>message - <strong>required,</strong> the content of the announcement</li>
+<li>title - optional, the title of the announcement</li>
+<li>subtitle - optional, the subtitle/subheader of the announcement</li>
+<li>type - optional, the type of the announcement (see defines in <code>__HELPERS/announce.dm</code>)</li>
+<li>sound - optional, the sound played accompanying the announcement</li>
+<li>channel_override - optional, what channel is this sound going to be played on?</li>
+<li>color_override - <strong>recommended,</strong> string, use the passed color instead of the default blue (see defines in <code>__HELPERS/announce.dm</code>)</li>
+<li>receivers - a list of all players to send the message to. defaults to all humans, AIs and ghosts</li>
+<li>playing_sound - optional, is this playing sound?</li>
+</ul><h3 id="proc/random_tts_voice"><aside class="declaration">proc </aside>random_tts_voice<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/mobs.dm#L41">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;mobs.dm 41"/></a></aside>
+        </h3>
+        <p>returns a random tts voice based on gender. Assumes theres 30 voices, not actually how many there are but yolo. todo should return based on gender but we need voice tags for that</p><h3 id="proc/recover_all_SS_and_recreate_master"><aside class="declaration">proc </aside>recover_all_SS_and_recreate_master<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/controllers/failsafe.dm#L148">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;failsafe.dm 148"/></a></aside>
+        </h3>
+        <p>Recreate all SSs which will still cause data survive due to Recover(), the new Master will then find and take them from global.vars</p><h3 id="proc/reject_bad_text"><aside class="declaration">proc </aside>reject_bad_text<aside>(text, max_length, ascii_only) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/text.dm#L45">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;text.dm 45"/></a></aside>
+        </h3>
+        <p>Returns the text if properly formatted, or null else.</p>
+<p>Things considered improper:</p>
+<ul>
+<li>Larger than max_length.</li>
+<li>Presence of non-ASCII characters if asci_only is set to TRUE.</li>
+<li>Only whitespaces, tabs and/or line breaks in the text.</li>
+<li>Presence of the &lt;, &gt;, \ and / characters.</li>
+<li>Presence of ASCII special control characters (horizontal tab and new line not included).</li>
+</ul><h3 id="proc/remove_image_from_client"><aside class="declaration">proc </aside>remove_image_from_client<aside>(/image/image, /<a href="client.html">client</a>/remove_from) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/game.dm#L74">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;game.dm 74"/></a></aside>
+        </h3>
+        <p>Removes an image from a client's <code>.images</code>. Useful as a callback.</p><h3 id="proc/remove_images_from_clients"><aside class="declaration">proc </aside>remove_images_from_clients<aside>(/image/image, /list/show_to) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/game.dm#L78">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;game.dm 78"/></a></aside>
+        </h3>
+        <p>Removes an image from a list of client's images</p><h3 id="proc/remove_verb"><aside class="declaration">proc </aside>remove_verb<aside>(/<a href="client.html">client</a>/target, verb_or_list_to_remove) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/verbs.dm#L59">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;verbs.dm 59"/></a></aside>
+        </h3>
+        <p>handles removing verb and sending it to browser to update, use this for removing verbs</p>
+<p>pass the verb type path to this instead of removing it from verbs so the statpanel can update
+Arguments:</p>
+<ul>
+<li>target - Who the verb is being removed from, client or mob typepath</li>
+<li>verb - typepath to a verb, or a list of verbs, supports lists of lists</li>
+</ul><h3 id="proc/return_generator_args"><aside class="declaration">proc </aside>return_generator_args<aside>(/generator/target) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/generators.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;generators.dm 7"/></a></aside>
+        </h3>
+        <p>returns the arguments given to a generator and manually extracts them from the internal byond object
+returns:</p>
+<ul>
+<li>flat list of strings for args given to the generator.</li>
+<li>Note: this means things like &quot;list(1,2,3)&quot; will need to be processed</li>
+</ul><h3 id="proc/return_typenames"><aside class="declaration">proc </aside>return_typenames<aside>(type) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/type_processing.dm#L73">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;type_processing.dm 73"/></a></aside>
+        </h3>
+        <p>Splits the type with parenthesis between each word so admins visually tell it is a typepath.</p><h3 id="proc/rustg_get_version"><aside class="declaration">proc </aside>rustg_get_version<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__DEFINES/rust_g.dm#L53">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__DEFINES&#x2F;rust_g.dm 53"/></a></aside>
+        </h3>
+        <p>Gets the version of rust_g</p><h3 id="proc/rustg_git_commit_date"><aside class="declaration">proc </aside>rustg_git_commit_date<aside>(rev, format) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__DEFINES/rust_g.dm#L160">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__DEFINES&#x2F;rust_g.dm 160"/></a></aside>
+        </h3>
+        <p>Returns the date of the given revision using the provided format.
+Defaults to returning %F which is YYYY-MM-DD.</p><h3 id="proc/rustg_git_commit_date_head"><aside class="declaration">proc </aside>rustg_git_commit_date_head<aside>(format) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__DEFINES/rust_g.dm#L168">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__DEFINES&#x2F;rust_g.dm 168"/></a></aside>
+        </h3>
+        <p>Returns the formatted datetime string of HEAD using the provided format.
+Defaults to returning %F which is YYYY-MM-DD.
+This is different to rustg_git_commit_date because it only needs the logs directory.</p><h3 id="proc/rustg_sound_length"><aside class="declaration">proc </aside>rustg_sound_length<aside>(file_path) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__DEFINES/rust_g.dm#L345">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__DEFINES&#x2F;rust_g.dm 345"/></a></aside>
+        </h3>
+        <p>Provided a static RSC file path or a raw text file path, returns the duration of the file in deciseconds as a float.</p><h3 id="proc/rustg_unix_timestamp"><aside class="declaration">proc </aside>rustg_unix_timestamp<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__DEFINES/rust_g.dm#L399">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__DEFINES&#x2F;rust_g.dm 399"/></a></aside>
+        </h3>
+        <p>Returns the timestamp as a string</p><h3 id="proc/sanitize"><aside class="declaration">proc </aside>sanitize<aside>(text) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/text.dm#L20">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;text.dm 20"/></a></aside>
+        </h3>
+        <p>Runs byond's html encoding sanitization proc, after replacing new-lines and tabs for the # character.</p><h3 id="proc/sanitize_inlist_tts"><aside class="declaration">proc </aside>sanitize_inlist_tts<aside>(value, gender) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/sanitize_values.dm#L69">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;sanitize_values.dm 69"/></a></aside>
+        </h3>
+        <p>a wrapper with snowflake handling for tts</p><h3 id="proc/sanitize_is_full_emote_list"><aside class="declaration">proc </aside>sanitize_is_full_emote_list<aside>(value) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/sanitize_values.dm#L41">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;sanitize_values.dm 41"/></a></aside>
+        </h3>
+        <p>Sanitize the custom emote list</p><h3 id="proc/sanitize_islist"><aside class="declaration">proc </aside>sanitize_islist<aside>(/list/value, default, required_amount, check_valid, possible_input_list) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/sanitize_values.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;sanitize_values.dm 30"/></a></aside>
+        </h3>
+        <p>Makes sure value is a list
+Args:
+value - The list we're ensuring is actually a list
+default - The set default that will be given as fallback.
+required_amount - The required length of value for it to be valid, otherwise will continue to check for a fallback default.
+check_valid - If we should check if the values are all in the list of possible inputs
+possible_input_list - The list of possible valid inputs this list can hold, only gets checked if check_valid is TRUE</p><h3 id="proc/screen_loc_to_offset"><aside class="declaration">proc </aside>screen_loc_to_offset<aside>(screen_loc, view) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/screen_objs.dm#L6">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;screen_objs.dm 6"/></a></aside>
+        </h3>
+        <p>Takes a screen loc string in the format
+&quot;+-left-offset:+-pixel,+-bottom-offset:+-pixel&quot;
+Where the :pixel is optional, and returns
+A list in the format (x_offset, y_offset)
+We require context to get info out of screen locs that contain relative info, so NORTH, SOUTH, etc</p><h3 id="proc/semver_to_list"><aside class="declaration">proc </aside>semver_to_list<aside>(semver_string) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L855">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 855"/></a></aside>
+        </h3>
+        <p>Converts a semver string into a list of numbers</p><h3 id="proc/send2adminchat"><aside class="declaration">proc </aside>send2adminchat<aside>(category, message) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/chat.dm#L69">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;chat.dm 69"/></a></aside>
+        </h3>
+        <p>Sends a message to TGS admin chat channels.</p>
+<p>category - The category of the mssage.
+message - The message to send.</p><h3 id="proc/send2chat"><aside class="declaration">proc </aside>send2chat<aside>(message, channel_tag) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/chat.dm#L44">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;chat.dm 44"/></a></aside>
+        </h3>
+        <p>Sends a message to TGS chat channels.</p>
+<p>message - The message to send.
+channel_tag - Required. If &quot;&quot;, the message with be sent to all connected (Game-type for TGS3) channels. Otherwise, it will be sent to TGS4 channels with that tag (Delimited by ','s).</p><h3 id="proc/send_ooc_announcement"><aside class="declaration">proc </aside>send_ooc_announcement<aside>(text, title, players, play_sound, sound_override, sender_override, style, encode_title, encode_text) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/ooc_announcement.dm#L27">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;ooc_announcement.dm 27"/></a></aside>
+        </h3>
+        <p>Sends a div formatted chat box announcement</p>
+<p>Formatted like:</p>
+<p>&quot; Server Announcement &quot; (or sender_override)</p>
+<p>&quot; Title &quot;</p>
+<p>&quot; Text &quot;</p>
+<p>Arguments</p>
+<ul>
+<li>text - required, the text to announce</li>
+<li>title - optional, the title of the announcement.</li>
+<li>players - optional, a list of all players to send the message to. defaults to the entire world</li>
+<li>play_sound - if TRUE, play a sound with the announcement</li>
+<li>sound_override - optional, override the default announcement sound</li>
+<li>sender_override - optional, modifies the sender of the announcement</li>
+<li>style - optional, is this an <code>ooc</code> (blue, used for admin announcements) or <code>game</code> (red, used for round-related announcements) announcement</li>
+<li>encode_title - if TRUE, the title will be HTML encoded (escaped)</li>
+<li>encode_text - if TRUE, the text will be HTML encoded (escaped)</li>
+</ul><h3 id="proc/set_z_lighting"><aside class="declaration">proc </aside>set_z_lighting<aside>(z_level_num, outside_colour, outside_lvl, inside_colour, inside_lvl, cave_colour, cave_lvl, deep_cave_colour, deep_cave_lvl) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/lighting.dm#L48">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;lighting.dm 48"/></a></aside>
+        </h3>
+        <p>Modifies the lighting for a z_level</p><h3 id="proc/siunit"><aside class="declaration">proc </aside>siunit<aside>(value, unit, maxdecimals) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/text.dm#L413">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;text.dm 413"/></a></aside>
+        </h3>
+        <p>Formats a number to human readable form with the appropriate SI unit.</p>
+<p>Supports SI exponents between 1e-15 to 1e15, but properly handles numbers outside that range as well.
+Examples:</p>
+<ul>
+<li>
+<p><code>siunit(1234, &quot;Pa&quot;, 1)</code> -&gt; <code>&quot;1.2 kPa&quot;</code></p>
+</li>
+<li>
+<p><code>siunit(0.5345, &quot;A&quot;, 0)</code> -&gt; <code>&quot;535 mA&quot;</code></p>
+</li>
+<li>
+<p><code>siunit(1000, &quot;Pa&quot;, 4)</code> -&gt; <code>&quot;1 kPa&quot;</code>
+Arguments:</p>
+</li>
+<li>
+<p>value - The number to convert to text. Can be positive or negative.</p>
+</li>
+<li>
+<p>unit - The base unit of the number, such as &quot;Pa&quot; or &quot;W&quot;.</p>
+</li>
+<li>
+<p>maxdecimals - Maximum amount of decimals to display for the final number. Defaults to 1.</p>
+</li>
+<li>
+<p>For pressure conversion, use proc/siunit_pressure() below</p>
+</li>
+</ul><h3 id="proc/sort_list"><aside class="declaration">proc </aside>sort_list<aside>(/list/list_to_sort, cmp) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_lists.dm#L671">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 671"/></a></aside>
+        </h3>
+        <p>sort any value in a list</p><h3 id="proc/sort_names"><aside class="declaration">proc </aside>sort_names<aside>(/list/list_to_sort, order) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_lists.dm#L675">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 675"/></a></aside>
+        </h3>
+        <p>uses sort_list() but uses the var's name specifically. This should probably be using mergeAtom() instead</p><h3 id="proc/start_log"><aside class="declaration">proc </aside>start_log<aside>(log) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/_logging.dm#L128">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;_logging.dm 128"/></a></aside>
+        </h3>
+        <p>ship both attack logs and victim logs to the end of round attack.log just to ensure we don't lose information</p><h3 id="proc/string_list"><aside class="declaration">proc </aside>string_list<aside>(/list/values) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/string_lists.dm#L6">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;string_lists.dm 6"/></a></aside>
+        </h3>
+        <p>Caches lists with non-numeric stringify-able values (text or typepath).</p><h3 id="proc/strip_appearance_underlays"><aside class="declaration">proc </aside>strip_appearance_underlays<aside>(/mutable_appearance/appearance) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icons.dm#L1284">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icons.dm 1284"/></a></aside>
+        </h3>
+        <p>Strips all underlays on a different plane from an appearance.
+Returns the stripped appearance.</p><h3 id="proc/strip_html"><aside class="declaration">proc </aside>strip_html<aside>(text, limit) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/text.dm#L26">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;text.dm 26"/></a></aside>
+        </h3>
+        <p>Runs STRIP_HTML_SIMPLE and sanitize.</p><h3 id="proc/stripped_input"><aside class="declaration">proc </aside>stripped_input<aside>(/<a href="mob.html">mob</a>/user, message, title, default, max_length, no_trim) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/text.dm#L73">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;text.dm 73"/></a></aside>
+        </h3>
+        <p>Used to get a properly sanitized input. Returns null if cancel is pressed.</p>
+<p>Arguments</p>
+<ul>
+<li>user - Target of the input prompt.</li>
+<li>message - The text inside of the prompt.</li>
+<li>title - The window title of the prompt.</li>
+<li>max_length - If you intend to impose a length limit - default is 1024.</li>
+<li>no_trim - Prevents the input from being trimmed if you intend to parse newlines or whitespace.</li>
+</ul><h3 id="proc/stripped_multiline_input"><aside class="declaration">proc </aside>stripped_multiline_input<aside>(/<a href="mob.html">mob</a>/user, message, title, default, max_length, no_trim) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/text.dm#L92">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;text.dm 92"/></a></aside>
+        </h3>
+        <p>Used to get a properly sanitized input in a larger box. Works very similarly to stripped_input.</p>
+<p>Arguments</p>
+<ul>
+<li>user - Target of the input prompt.</li>
+<li>message - The text inside of the prompt.</li>
+<li>title - The window title of the prompt.</li>
+<li>max_length - If you intend to impose a length limit - default is 1024.</li>
+<li>no_trim - Prevents the input from being trimmed if you intend to parse newlines or whitespace.</li>
+</ul><h3 id="proc/turf_block_check"><aside class="declaration">proc </aside>turf_block_check<aside>(/<a href="atom.html">atom</a>/subject, /<a href="atom.html">atom</a>/target, ignore_can_pass, ignore_density, ignore_closed_turf, ignore_invulnerable, ignore_objects, ignore_mobs, ignore_space) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L1242">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 1242"/></a></aside>
+        </h3>
+        <p>Return TRUE if we have a block, return FALSE otherwise</p><h3 id="proc/unique_list"><aside class="declaration">proc </aside>unique_list<aside>(/list/inserted_list) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_lists.dm#L341">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 341"/></a></aside>
+        </h3>
+        <p>Return a list with no duplicate entries</p><h3 id="proc/unique_list_in_place"><aside class="declaration">proc </aside>unique_list_in_place<aside>(/list/inserted_list) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/_lists.dm#L347">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;_lists.dm 347"/></a></aside>
+        </h3>
+        <p>same as unique_list, but returns nothing and acts on list in place (also handles associated values properly)</p><h3 id="proc/url2htmlloader"><aside class="declaration">proc </aside>url2htmlloader<aside>(url) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/type2type.dm#L297">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;type2type.dm 297"/></a></aside>
+        </h3>
+        <p>Return html to load a url.
+for use inside of browse() calls to html assets that might be loaded on a cdn.</p><h3 id="proc/valid_build_direction"><aside class="declaration">proc </aside>valid_build_direction<aside>(/<a href="turf.html">turf</a>/dest_turf, test_dir, is_fulltile) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/turfs.dm#L13">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;turfs.dm 13"/></a></aside>
+        </h3>
+        <p>Checks whether the target turf is in a valid state to accept a directional construction
+such as windows or railings.</p>
+<p>Returns FALSE if the target turf cannot accept a directional construction.
+Returns TRUE otherwise.</p>
+<p>Arguments:</p>
+<ul>
+<li>dest_turf - The destination turf to check for existing directional constructions</li>
+<li>test_dir - The prospective dir of some atom you'd like to put on this turf.</li>
+<li>is_fulltile - Whether the thing you're attempting to move to this turf takes up the entire tile or whether it supports multiple movable atoms on its tile.</li>
+</ul><h3 id="proc/view_to_pixels"><aside class="declaration">proc </aside>view_to_pixels<aside>(view) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/view.dm#L27">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;view.dm 27"/></a></aside>
+        </h3>
+        <p>Takes a string or num view, and converts it to pixel width/height in a list(pixel_width, pixel_height)</p><h3 id="proc/weight_class_data"><aside class="declaration">proc </aside>weight_class_data<aside>(w_class) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L839">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 839"/></a></aside>
+        </h3>
+        <p>Returns an assoc list of WEIGHT CLASS TEXT = DESCRIPTION based on the arg you provide.
+Used by examine tags for giving each weight class a special description.</p><h3 id="proc/weight_class_to_text"><aside class="declaration">proc </aside>weight_class_to_text<aside>(w_class) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L818">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 818"/></a></aside>
+        </h3>
+        <p>Returns a string based on the weight class define used as argument.</p></main>
+<footer>
+    tgmc.dme
+    <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/tree/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c">8f4596e</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;atom - byond</title>
+</head>
+<body>
+<header>
+    <a href="index.html">byond</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="atom.html#proc">Proc Details</a></header>
+<main>
+<h1>atom <aside>/<a href="atom.html">atom</a></aside><aside> inherits /<a href="datum.html">datum</a></aside>
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/pronouns.dm#L154">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;pronouns.dm 154"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="atom.html#proc/AltRightClick">AltRightClick</a></th><td>Called when a mob Alt + Rightmouseclicks this atom, given that mobs Altclick() does not return TRUE</td></tr>
+            <tr><th><a href="atom.html#proc/GetAllContents">GetAllContents</a></th><td>Returns the src and all recursive contents as a list.</td></tr>
+            <tr><th><a href="atom.html#proc/RightClick">RightClick</a></th><td>Called when a mob Rightmouseclicks this atom</td></tr>
+            <tr><th><a href="atom.html#proc/Shake">Shake</a></th><td>Perform a shake on an atom, resets its position afterwards</td></tr>
+            <tr><th><a href="atom.html#proc/ShiftRightClick">ShiftRightClick</a></th><td>Called when a mob Shift + Rightmouseclicks this atom</td></tr>
+            <tr><th><a href="atom.html#proc/attack_hand_alternate">attack_hand_alternate</a></th><td>This proc is called when a human user right clicks on an atom with an empty hand</td></tr>
+            <tr><th><a href="atom.html#proc/attack_powerloader">attack_powerloader</a></th><td>This proc is called when an atom gets attacked (clicked on) by a powerloader clamp</td></tr>
+            <tr><th><a href="atom.html#proc/calculate_adjacencies">calculate_adjacencies</a></th><td>Scans all adjacent turfs to find targets to smooth with.</td></tr>
+            <tr><th><a href="atom.html#proc/do_jitter_animation">do_jitter_animation</a></th><td>Does a jitter animation, with a few settings so as to allow changing the animation as needed:</td></tr>
+            <tr><th><a href="atom.html#proc/find_type_in_direction">find_type_in_direction</a></th><td>Scans direction to find targets to smooth with.</td></tr>
+            <tr><th><a href="atom.html#proc/get_all_contents_type">get_all_contents_type</a></th><td>identical to getallcontents but returns a list of atoms of the type passed in the argument.</td></tr>
+            <tr><th><a href="atom.html#proc/log_message">log_message</a></th><td>Generic logging helper</td></tr>
+            <tr><th><a href="atom.html#proc/log_talk">log_talk</a></th><td>Helper for logging chat messages or other logs with arbitrary inputs (e.g. announcements)</td></tr>
+            <tr><th><a href="atom.html#proc/set_smoothed_icon_state">set_smoothed_icon_state</a></th><td>Changes the icon state based on the new junction bitmask.</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/AltRightClick"><aside class="declaration">proc </aside>AltRightClick<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/click.dm#L399">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;click.dm 399"/></a></aside>
+        </h3>
+        <p>Called when a mob Alt + Rightmouseclicks this atom, given that mobs Altclick() does not return TRUE</p><h3 id="proc/GetAllContents"><aside class="declaration">proc </aside>GetAllContents<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L519">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 519"/></a></aside>
+        </h3>
+        <p>Returns the src and all recursive contents as a list.</p><h3 id="proc/RightClick"><aside class="declaration">proc </aside>RightClick<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/click.dm#L391">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;click.dm 391"/></a></aside>
+        </h3>
+        <p>Called when a mob Rightmouseclicks this atom</p><h3 id="proc/Shake"><aside class="declaration">proc </aside>Shake<aside>(pixelshiftx, pixelshifty, duration, shake_interval) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L973">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 973"/></a></aside>
+        </h3>
+        <p>Perform a shake on an atom, resets its position afterwards</p><h3 id="proc/ShiftRightClick"><aside class="declaration">proc </aside>ShiftRightClick<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/click.dm#L395">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;click.dm 395"/></a></aside>
+        </h3>
+        <p>Called when a mob Shift + Rightmouseclicks this atom</p><h3 id="proc/attack_hand_alternate"><aside class="declaration">proc </aside>attack_hand_alternate<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/user) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/other_mobs.dm#L59">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;other_mobs.dm 59"/></a></aside>
+        </h3>
+        <p>This proc is called when a human user right clicks on an atom with an empty hand</p>
+<p>Arguments:</p>
+<ul>
+<li>user: The mob clicking on the atom</li>
+</ul><h3 id="proc/attack_powerloader"><aside class="declaration">proc </aside>attack_powerloader<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/user, /<a href="obj/item.html">obj/item</a>/powerloader_clamp/attached_clamp) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/_onclick/other_mobs.dm#L77">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;other_mobs.dm 77"/></a></aside>
+        </h3>
+        <p>This proc is called when an atom gets attacked (clicked on) by a powerloader clamp</p>
+<p>Arguments:</p>
+<ul>
+<li>user: The mob doing the attacking</li>
+<li>attached_clamp: The clamp used by the mob for attacking</li>
+</ul><h3 id="proc/calculate_adjacencies"><aside class="declaration">proc </aside>calculate_adjacencies<aside>() 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icon_smoothing.dm#L76">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icon_smoothing.dm 76"/></a></aside>
+        </h3>
+        <p>Scans all adjacent turfs to find targets to smooth with.</p><h3 id="proc/do_jitter_animation"><aside class="declaration">proc </aside>do_jitter_animation<aside>(jitteriness, jitter_duration, jitter_loops) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/matrices.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;matrices.dm 10"/></a></aside>
+        </h3>
+        <p>Does a jitter animation, with a few settings so as to allow changing the animation as needed:</p>
+<ul>
+<li>jitter: The amount of jitter in this animation. Extremely high values, such as 500 or 1000, are recommended.</li>
+<li>jitter_duration: The duration of the jitter animation.</li>
+<li>jitter_loops: The amount of times to loop this animation.</li>
+</ul><h3 id="proc/find_type_in_direction"><aside class="declaration">proc </aside>find_type_in_direction<aside>(direction) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icon_smoothing.dm#L254">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icon_smoothing.dm 254"/></a></aside>
+        </h3>
+        <p>Scans direction to find targets to smooth with.</p><h3 id="proc/get_all_contents_type"><aside class="declaration">proc </aside>get_all_contents_type<aside>(type) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/unsorted.dm#L527">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;unsorted.dm 527"/></a></aside>
+        </h3>
+        <p>identical to getallcontents but returns a list of atoms of the type passed in the argument.</p><h3 id="proc/log_message"><aside class="declaration">proc </aside>log_message<aside>(message, message_type, color, log_globally) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/_logging.dm#L76">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;_logging.dm 76"/></a></aside>
+        </h3>
+        <p>Generic logging helper</p>
+<p>reads the type of the log
+and writes it to the respective log file
+unless log_globally is FALSE
+Arguments:</p>
+<ul>
+<li>message - The message being logged</li>
+<li>message_type - the type of log the message is(ATTACK, SAY, etc)</li>
+<li>color - color of the log text</li>
+<li>log_globally - boolean checking whether or not we write this log to the log file</li>
+</ul><h3 id="proc/log_talk"><aside class="declaration">proc </aside>log_talk<aside>(message, message_type, tag, log_globally, forced_by, custom_say_emote) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/logging/talk.dm#L14">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;logging&#x2F;talk.dm 14"/></a></aside>
+        </h3>
+        <p>Helper for logging chat messages or other logs with arbitrary inputs (e.g. announcements)</p>
+<p>This proc compiles a log string by prefixing the tag to the message
+and suffixing what it was forced_by if anything
+if the message lacks a tag and suffix then it is logged on its own
+Arguments:</p>
+<ul>
+<li>message - The message being logged</li>
+<li>message_type - the type of log the message is(ATTACK, SAY, etc)</li>
+<li>tag - tag that indicates the type of text(announcement, telepathy, etc)</li>
+<li>log_globally - boolean checking whether or not we write this log to the log file</li>
+<li>forced_by - source that forced the dialogue if any</li>
+</ul><h3 id="proc/set_smoothed_icon_state"><aside class="declaration">proc </aside>set_smoothed_icon_state<aside>(new_junction) 
+        
+    
+            <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/blob/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c/code/__HELPERS/icon_smoothing.dm#L316">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__HELPERS&#x2F;icon_smoothing.dm 316"/></a></aside>
+        </h3>
+        <p>Changes the icon state based on the new junction bitmask.</p></main>
+<footer>
+    tgmc.dme
+    <a href="https://github.com/Rug-Dealer/TerraGov-Marine-Corps/tree/8f4596ea1d600dd72dc447ccf9c9e2c8c269745c">8f4596e</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>
